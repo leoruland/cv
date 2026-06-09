@@ -7,6 +7,6 @@ import kotlinx.browser.document
 @OptIn(ExperimentalComposeUiApi::class)
 fun main() {
     val rootId = "ComposeTarget"
-    document.title = "Leonardo Ruland – CV"
+    document.title = "Leonardo Ruland"
     CanvasBasedWindow(canvasElementId = rootId) { App() }
 }
