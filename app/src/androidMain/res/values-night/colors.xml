@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="splash_background">#FF00A485</color>
+    <color name="app_window_background">#FF404946</color>
 </resources>
