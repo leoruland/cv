@@ -1,12 +1,11 @@
 package dev.leoruland.cv
 
 import androidx.compose.ui.ExperimentalComposeUiApi
-import androidx.compose.ui.window.CanvasBasedWindow
+import androidx.compose.ui.window.ComposeViewport
 import kotlinx.browser.document
 
 @OptIn(ExperimentalComposeUiApi::class)
 fun main() {
-    val rootId = "ComposeTarget"
     document.title = "Leonardo Ruland"
-    CanvasBasedWindow(canvasElementId = rootId) { App() }
+    ComposeViewport(viewportContainerId = "ComposeTarget") { App() }
 }
