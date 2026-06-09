@@ -1,0 +1,56 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# Kotlin
+.kotlin/
+kotlin-js-store/
+
+# IntelliJ IDEA / Android Studio
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+captures/
+.navigation/
+
+# Local config
+local.properties
+*.local
+
+# Xcode / iOS
+xcuserdata/
+*.xcuserstate
+*.xcworkspace/xcuserdata/
+DerivedData/
+Pods/
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# CocoaPods
+iosApp/Pods/
+
+# Node (für kotlin-js Tooling)
+node_modules/
+
+# Logs & Temp
+*.log
+*.tmp
+*.swp
+*~
+
+# Claude Code
+.claude/

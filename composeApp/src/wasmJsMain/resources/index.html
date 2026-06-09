@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#6750A4">
+    <title>Leonardo Ruland – CV</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icon-192.png" type="image/png">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background: #FEF7FF;
+            overflow: hidden;
+            font-family: 'Roboto', system-ui, sans-serif;
+        }
+        #ComposeTarget {
+            width: 100vw;
+            height: 100dvh;
+            display: block;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+<canvas id="ComposeTarget"></canvas>
+<script type="application/javascript" src="composeApp.js"></script>
+<script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+            navigator.serviceWorker.register('sw.js').catch(function (err) {
+                console.warn('Service Worker registration failed:', err);
+            });
+        });
+    }
+</script>
+</body>
+</html>
