@@ -1,13 +1,13 @@
 {
-  "name": "Leonardo Ruland – CV",
-  "short_name": "CV Ruland",
+  "name": "Leonardo Ruland",
+  "short_name": "Leo Dev",
   "description": "Lebenslauf von Leonardo Ruland als Progressive Web App, gebaut mit Kotlin Multiplatform und Compose.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "orientation": "any",
-  "background_color": "#FEF7FF",
-  "theme_color": "#6750A4",
+  "background_color": "#919E9A",
+  "theme_color": "#919E9A",
   "lang": "de",
   "icons": [
     {

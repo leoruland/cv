@@ -1,5 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
-  <rect width="512" height="512" fill="#6750A4" rx="96"/>
-  <text x="256" y="220" font-family="Helvetica, Arial, sans-serif" font-size="170" font-weight="700" text-anchor="middle" fill="#EADDFF">leo</text>
-  <text x="256" y="400" font-family="Helvetica, Arial, sans-serif" font-size="170" font-weight="700" text-anchor="middle" fill="#EADDFF">dev</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <rect width="1024" height="1024" fill="#00A485"/>
+  <g font-family="JetBrains Mono, Menlo, Consolas, ui-monospace, monospace" font-weight="800" fill="#FFFFFF" text-anchor="middle">
+    <text x="512" y="430" font-size="260" letter-spacing="6">LEO</text>
+    <text x="512" y="720" font-size="260" letter-spacing="6">DEV</text>
+  </g>
 </svg>
