@@ -29,3 +29,7 @@ dependencyResolutionManagement {
 
 include(":app")
 include(":feature")
+include(":feature:personal")
+include(":feature:skills")
+include(":feature:experience")
+include(":navigation")

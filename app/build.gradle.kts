@@ -56,6 +56,10 @@ kotlin {
         }
         commonMain.dependencies {
             implementation(project(":feature"))
+            implementation(project(":navigation"))
+            implementation(project(":feature:personal"))
+            implementation(project(":feature:skills"))
+            implementation(project(":feature:experience"))
         }
     }
 }
