@@ -33,6 +33,9 @@ import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.ui.NavDisplay
 import androidx.savedstate.serialization.SavedStateConfiguration
 import dev.leoruland.cv.ui.NavigationTarget
+import dev.leoruland.cv.ui.screens.experience.ExperienceScreen
+import dev.leoruland.cv.ui.screens.personal.PersonalScreen
+import dev.leoruland.cv.ui.screens.skills.SkillsScreen
 import kotlinx.serialization.modules.SerializersModule
 import kotlinx.serialization.modules.polymorphic
 import kotlinx.serialization.modules.subclass

@@ -1,4 +1,4 @@
-package dev.leoruland.cv.ui.screens
+package dev.leoruland.cv.ui.screens.skills
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -14,15 +14,24 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import dev.leoruland.cv.data.CvData
+import dev.leoruland.cv.data.repository.DefaultSkillsRepository
+import dev.leoruland.cv.data.source.DefaultSkillsDataSource
 import dev.leoruland.cv.ui.components.ChipFlowRow
 import dev.leoruland.cv.ui.components.SectionTitle
 import dev.leoruland.cv.ui.components.TagChip
 
 @Composable
-fun SkillsScreen(modifier: Modifier = Modifier) {
+fun SkillsScreen(
+    modifier: Modifier = Modifier,
+    viewModel: SkillsViewModel = remember {
+        SkillsViewModel(DefaultSkillsRepository(DefaultSkillsDataSource()))
+    },
+) {
+    val groups by viewModel.skillGroups
     Column(
         modifier = modifier
             .fillMaxWidth()
@@ -36,7 +45,7 @@ fun SkillsScreen(modifier: Modifier = Modifier) {
             color = MaterialTheme.colorScheme.primary,
         )
         Spacer(Modifier.height(4.dp))
-        CvData.skillGroups.forEach { group ->
+        groups.forEach { group ->
             SectionTitle(group.title)
             Card(
                 shape = RoundedCornerShape(16.dp),
