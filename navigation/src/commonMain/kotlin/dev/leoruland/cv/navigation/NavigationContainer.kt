@@ -52,8 +52,8 @@ import kotlinx.serialization.modules.subclass
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NavigationContainer(
-    destinations: List<CvDestination>,
-    startDestination: CvDestination,
+    destinations: List<NavigationTarget>,
+    startDestination: NavigationTarget,
     serializerSubclasses: PolymorphicModuleBuilder<NavKey>.() -> Unit,
     entryProvider: (NavKey) -> NavEntry<NavKey>,
 ) {
@@ -67,7 +67,7 @@ fun NavigationContainer(
         }
     }
     val backStack = rememberNavBackStack(navConfig, startDestination)
-    val current: CvDestination = backStack.lastOrNull() as? CvDestination ?: startDestination
+    val current: NavigationTarget = backStack.lastOrNull() as? NavigationTarget ?: startDestination
 
     BoxWithConstraints(
         modifier = Modifier.fillMaxSize(),
@@ -124,7 +124,7 @@ private fun NavContent(
     }
 }
 
-private fun NavBackStack<NavKey>.switchTab(destination: CvDestination) {
+private fun NavBackStack<NavKey>.switchTab(destination: NavigationTarget) {
     if (lastOrNull() == destination) return
     clear()
     add(destination)
@@ -144,9 +144,9 @@ private fun AppBar(title: String) {
 
 @Composable
 private fun BottomBar(
-    destinations: List<CvDestination>,
-    selected: CvDestination,
-    onSelect: (CvDestination) -> Unit,
+    destinations: List<NavigationTarget>,
+    selected: NavigationTarget,
+    onSelect: (NavigationTarget) -> Unit,
 ) {
     NavigationBar(
         containerColor = MaterialTheme.colorScheme.surfaceVariant,
@@ -165,9 +165,9 @@ private fun BottomBar(
 
 @Composable
 private fun Rail(
-    destinations: List<CvDestination>,
-    selected: CvDestination,
-    onSelect: (CvDestination) -> Unit,
+    destinations: List<NavigationTarget>,
+    selected: NavigationTarget,
+    onSelect: (NavigationTarget) -> Unit,
 ) {
     NavigationRail(
         containerColor = MaterialTheme.colorScheme.surfaceVariant,
@@ -196,18 +196,18 @@ private fun Rail(
 // ---------- Preview-Stubs ----------
 
 @Serializable
-private data object PreviewRouteA : CvDestination {
+private data object PreviewRouteA : NavigationTarget {
     override val label: String get() = "Tab A"
     override val icon: ImageVector get() = Icons.Outlined.Person
 }
 
 @Serializable
-private data object PreviewRouteB : CvDestination {
+private data object PreviewRouteB : NavigationTarget {
     override val label: String get() = "Tab B"
     override val icon: ImageVector get() = Icons.Outlined.Star
 }
 
-private val previewDestinations = listOf<CvDestination>(PreviewRouteA, PreviewRouteB)
+private val previewDestinations = listOf<NavigationTarget>(PreviewRouteA, PreviewRouteB)
 
 private val previewSerializers: PolymorphicModuleBuilder<NavKey>.() -> Unit = {
     subclass(PreviewRouteA::class)
