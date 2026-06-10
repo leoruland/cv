@@ -71,7 +71,7 @@ android {
         applicationId = "dev.leoruland.cv"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 1
+        versionCode = 202606101
         versionName = "1.0"
     }
     packaging {
