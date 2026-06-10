@@ -7,10 +7,10 @@ import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import dev.leoruland.cv.feature.skills.domain.model.Skill
 import dev.leoruland.cv.theming.AppTheme
-import androidx.compose.ui.tooling.preview.Preview
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
@@ -31,11 +31,11 @@ private fun ChipFlowRowPreview() {
     AppTheme {
         Box(modifier = Modifier.padding(4.dp)) {
             ChipFlowRow {
-                TagChip(Skill("Kotlin", isActive = true))
-                TagChip(Skill("Coroutines", isActive = true))
-                TagChip(Skill("Compose"))
-                TagChip(Skill("Material 3"))
-                TagChip(Skill("CameraX"))
+                TagChip(skill = Skill(name = "Kotlin", isActive = true), onClick = {})
+                TagChip(skill = Skill(name = "Coroutines", isActive = true), onClick = {})
+                TagChip(skill = Skill(name = "Compose"), onClick = {})
+                TagChip(skill = Skill(name = "Material 3"), onClick = {})
+                TagChip(skill = Skill(name = "CameraX"), onClick = {})
             }
         }
     }

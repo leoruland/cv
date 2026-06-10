@@ -50,7 +50,7 @@ fun SkillsScreen(
             color = MaterialTheme.colorScheme.primary,
         )
         Spacer(Modifier.height(4.dp))
-        groups.forEach { group ->
+        groups.forEachIndexed { groupIndex, group ->
             SectionTitle(group.title)
             Card(
                 shape = RoundedCornerShape(16.dp),
@@ -62,7 +62,12 @@ fun SkillsScreen(
                 modifier = Modifier.fillMaxWidth(),
             ) {
                 ChipFlowRow(modifier = Modifier.padding(14.dp)) {
-                    group.items.forEach { TagChip(it) }
+                    group.items.forEachIndexed { skillIndex, skill ->
+                        TagChip(
+                            skill = skill,
+                            onClick = { viewModel.toggleSkill(groupIndex, skillIndex) },
+                        )
+                    }
                 }
             }
         }

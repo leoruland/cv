@@ -9,6 +9,10 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import dev.leoruland.cv.feature.skills.domain.model.Skill
@@ -16,7 +20,11 @@ import dev.leoruland.cv.theming.AppTheme
 import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
-fun TagChip(skill: Skill, modifier: Modifier = Modifier) {
+fun TagChip(
+    modifier: Modifier = Modifier,
+    skill: Skill,
+    onClick: () -> Unit,
+) {
     val containerColor = if (skill.isActive) {
         MaterialTheme.colorScheme.tertiaryContainer
     } else {
@@ -29,10 +37,11 @@ fun TagChip(skill: Skill, modifier: Modifier = Modifier) {
     }
     Surface(
         modifier = modifier,
+        onClick = onClick,
         shape = MaterialTheme.shapes.extraLarge,
         color = containerColor,
         contentColor = contentColor,
-        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline),
+        border = BorderStroke(width = 1.dp, color = MaterialTheme.colorScheme.outline),
     ) {
         Text(
             text = skill.name,
@@ -47,7 +56,7 @@ fun TagChip(skill: Skill, modifier: Modifier = Modifier) {
 private fun TagChipActivePreview() {
     AppTheme {
         Box(modifier = Modifier.padding(4.dp)) {
-            TagChip(Skill("Kotlin", isActive = true))
+            TagChip(skill = Skill(name = "Kotlin", isActive = true), onClick = {})
         }
     }
 }
@@ -57,21 +66,21 @@ private fun TagChipActivePreview() {
 private fun TagChipInactivePreview() {
     AppTheme {
         Box(modifier = Modifier.padding(4.dp)) {
-            TagChip(Skill("Kotlin", isActive = false))
+            TagChip(skill = Skill(name = "Kotlin", isActive = false), onClick = {})
         }
     }
 }
 
 @Preview
 @Composable
-private fun TagChipBothStatesPreview() {
+private fun TagChipInteractivePreview() {
     AppTheme {
+        var skill by remember { mutableStateOf(Skill("Tap me", isActive = false)) }
         Row(
             modifier = Modifier.padding(4.dp),
             horizontalArrangement = Arrangement.spacedBy(6.dp),
         ) {
-            TagChip(Skill("Active", isActive = true))
-            TagChip(Skill("Inactive", isActive = false))
+            TagChip(skill = skill, onClick = { skill = skill.copy(isActive = !skill.isActive) })
         }
     }
 }
