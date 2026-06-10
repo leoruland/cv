@@ -31,14 +31,13 @@ kotlin {
             implementation(project(":core"))
             implementation(project(":navigation"))
             implementation(project(":theming"))
-            implementation(project(":feature:projects"))
             implementation(compose.components.resources)
         }
     }
 }
 
 android {
-    namespace = "dev.leoruland.cv.feature.skills"
+    namespace = "dev.leoruland.cv.feature.projects"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {

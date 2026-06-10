@@ -13,20 +13,6 @@ object ExperienceContent {
                 "von Architektur bis Release. Daneben App-übergreifende Initiativen " +
                 "in Accessibility und Tooling.",
             bullets = listOf(
-                Bullet(
-                    "Pixolo Passport App",
-                    "Alleinige Android-Verantwortung für die Neuentwicklung einer App " +
-                        "zum Erstellen biometrischer Passbilder: Multi-Module-Architektur " +
-                        "(base/api/features) mit Clean Architecture und MVVM, " +
-                        "Computer-Vision-Pipeline aus CameraX und ML Kit Face Detection " +
-                        "für 35-mm-Lens-Capture und Biometrie-Validierung, anschließende " +
-                        "Bearbeitungsfunktion sowie Warenkorb-, Registrierungs- und " +
-                        "Print-Flow gegen die apploft API.",
-                ),
-                Bullet(
-                    "Kulturpunkte Hamburg",
-                    "Feature-Entwicklung und Bugfixing über mehrere Releases.",
-                ),
                 Bullet("BFSG-Anpassungen", "über mehrere betreute Apps."),
                 Bullet(
                     "Repository-Migration",
@@ -41,28 +27,7 @@ object ExperienceContent {
             description = "Android-Entwicklung für diverse Kunden-Apps und hauseigene " +
                 "Komponenten-Libraries. Feature-Entwicklung, Bugfixing und Wartung mit " +
                 "Abstimmung zu iOS-, Backend- und UX-Kolleg:innen.",
-            bullets = listOf(
-                Bullet(
-                    "C&A",
-                    "Android Online-Shop, internationales Team. Refactoring von MVP auf " +
-                        "MVVM, Compose Material2 Theming und Design-Updates.",
-                ),
-                Bullet(
-                    "POCO",
-                    "Android-App des Möbelhauses. Konzept und Umsetzung einer " +
-                        "überarbeiteten Startseite.",
-                ),
-                Bullet(
-                    "Mercedes me Service App",
-                    "Android Service-App in MVI, englischsprachiges Team. " +
-                        "Feature-Entwicklung und Bugfixing.",
-                ),
-                Bullet(
-                    "Lotto Niedersachsen",
-                    "Android Lotterie-App in MVVM. Implementierung neuer Features " +
-                        "und Bugfixing.",
-                ),
-            ),
+            bullets = emptyList(),
         ),
         ExperienceEntry(
             role = "Werkstudent Android-Entwicklung",

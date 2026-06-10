@@ -20,10 +20,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import cv_app.feature.skills.generated.resources.Res
 import cv_app.feature.skills.generated.resources.skills_headline
+import dev.leoruland.cv.core.components.ChipFlowRow
+import dev.leoruland.cv.core.components.SectionTitle
+import dev.leoruland.cv.feature.projects.data.DefaultProjectsDataSource
+import dev.leoruland.cv.feature.projects.domain.DefaultProjectsRepository
+import dev.leoruland.cv.feature.projects.ui.ProjectsSection
 import dev.leoruland.cv.feature.skills.data.DefaultSkillsDataSource
 import dev.leoruland.cv.feature.skills.domain.DefaultSkillsRepository
-import dev.leoruland.cv.feature.skills.ui.components.ChipFlowRow
-import dev.leoruland.cv.core.components.SectionTitle
 import dev.leoruland.cv.feature.skills.ui.components.TagChip
 import dev.leoruland.cv.theming.AppTheme
 import org.jetbrains.compose.resources.stringResource
@@ -33,10 +36,15 @@ import androidx.compose.ui.tooling.preview.Preview
 fun SkillsScreen(
     modifier: Modifier = Modifier,
     viewModel: SkillsViewModel = remember {
-        SkillsViewModel(DefaultSkillsRepository(DefaultSkillsDataSource()))
+        SkillsViewModel(
+            skillsRepository = DefaultSkillsRepository(DefaultSkillsDataSource()),
+            projectsRepository = DefaultProjectsRepository(DefaultProjectsDataSource()),
+        )
     },
 ) {
     val groups by viewModel.skillGroups
+    val activeSkillNames by viewModel.activeSkillNames
+    val projects by viewModel.projects
     Column(
         modifier = modifier
             .fillMaxWidth()
@@ -71,6 +79,11 @@ fun SkillsScreen(
                 }
             }
         }
+        Spacer(Modifier.height(16.dp))
+        ProjectsSection(
+            projects = projects,
+            activeSkillNames = activeSkillNames,
+        )
     }
 }
 
