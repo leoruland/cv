@@ -21,10 +21,15 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import cv_app.feature.personal.generated.resources.Res
+import cv_app.feature.personal.generated.resources.section_contact
+import cv_app.feature.personal.generated.resources.section_education
+import cv_app.feature.personal.generated.resources.section_languages
 import dev.leoruland.cv.feature.personal.domain.DefaultPersonalRepository
 import dev.leoruland.cv.feature.personal.data.DefaultPersonalDataSource
 import dev.leoruland.cv.core.components.SectionTitle
 import dev.leoruland.cv.theming.AppTheme
+import org.jetbrains.compose.resources.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
@@ -75,21 +80,21 @@ fun PersonalScreen(
             }
         }
 
-        SectionTitle("Kontakt")
+        SectionTitle(stringResource(Res.string.section_contact))
         InfoCard {
             LabeledLine("Adresse", p.address)
             LabeledLine("Telefon", p.phone)
             LabeledLine("E-Mail", p.email)
         }
 
-        SectionTitle("Sprachen")
+        SectionTitle(stringResource(Res.string.section_languages))
         InfoCard {
             p.languages.forEach { lang ->
                 Text(lang, style = MaterialTheme.typography.bodyMedium)
             }
         }
 
-        SectionTitle("Ausbildung")
+        SectionTitle(stringResource(Res.string.section_education))
         p.education.forEach { e ->
             InfoCard {
                 Text(

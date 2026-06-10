@@ -33,6 +33,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import cv_app.navigation.generated.resources.Res
+import cv_app.navigation.generated.resources.preview_tab_a
+import cv_app.navigation.generated.resources.preview_tab_b
 import androidx.navigation3.runtime.NavBackStack
 import androidx.navigation3.runtime.NavEntry
 import androidx.navigation3.runtime.NavKey
@@ -43,6 +46,8 @@ import androidx.navigationevent.compose.LocalNavigationEventDispatcherOwner
 import androidx.navigationevent.compose.rememberNavigationEventDispatcherOwner
 import androidx.savedstate.serialization.SavedStateConfiguration
 import dev.leoruland.cv.theming.AppTheme
+import org.jetbrains.compose.resources.StringResource
+import org.jetbrains.compose.resources.stringResource
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.modules.PolymorphicModuleBuilder
 import kotlinx.serialization.modules.SerializersModule
@@ -94,7 +99,7 @@ fun NavigationContainer(
             }
         } else {
             Scaffold(
-                topBar = { AppBar(current.label) },
+                topBar = { AppBar(stringResource(current.labelRes)) },
                 bottomBar = {
                     BottomBar(
                         destinations = destinations,
@@ -153,11 +158,12 @@ private fun BottomBar(
         contentColor = MaterialTheme.colorScheme.onSurface,
     ) {
         destinations.forEach { target ->
+            val label = stringResource(target.labelRes)
             NavigationBarItem(
                 selected = target == selected,
                 onClick = { onSelect(target) },
-                icon = { Icon(target.icon, contentDescription = target.label) },
-                label = { Text(target.label) },
+                icon = { Icon(target.icon, contentDescription = label) },
+                label = { Text(label) },
             )
         }
     }
@@ -179,12 +185,13 @@ private fun Rail(
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             destinations.forEach { dest ->
+                val label = stringResource(dest.labelRes)
                 WideNavigationRailItem(
                     modifier = Modifier.padding(end = 8.dp),
                     selected = dest == selected,
                     onClick = { onSelect(dest) },
-                    icon = { Icon(dest.icon, contentDescription = dest.label) },
-                    label = { Text(dest.label) },
+                    icon = { Icon(dest.icon, contentDescription = label) },
+                    label = { Text(label) },
                     railExpanded = true,
                 )
                 Spacer(Modifier.size(16.dp))
@@ -197,13 +204,13 @@ private fun Rail(
 
 @Serializable
 private data object PreviewRouteA : NavigationTarget {
-    override val label: String get() = "Tab A"
+    override val labelRes: StringResource get() = Res.string.preview_tab_a
     override val icon: ImageVector get() = Icons.Outlined.Person
 }
 
 @Serializable
 private data object PreviewRouteB : NavigationTarget {
-    override val label: String get() = "Tab B"
+    override val labelRes: StringResource get() = Res.string.preview_tab_b
     override val icon: ImageVector get() = Icons.Outlined.Star
 }
 

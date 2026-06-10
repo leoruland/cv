@@ -31,11 +31,14 @@ import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
+import cv_app.feature.experience.generated.resources.Res
+import cv_app.feature.experience.generated.resources.experience_headline
 import dev.leoruland.cv.feature.experience.domain.model.Bullet
 import dev.leoruland.cv.feature.experience.domain.model.ExperienceEntry
 import dev.leoruland.cv.feature.experience.domain.DefaultExperienceRepository
 import dev.leoruland.cv.feature.experience.data.DefaultExperienceDataSource
 import dev.leoruland.cv.theming.AppTheme
+import org.jetbrains.compose.resources.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
@@ -54,7 +57,7 @@ fun ExperienceScreen(
         verticalArrangement = Arrangement.spacedBy(10.dp),
     ) {
         Text(
-            "Berufserfahrung",
+            stringResource(Res.string.experience_headline),
             style = MaterialTheme.typography.headlineSmall,
             color = MaterialTheme.colorScheme.primary,
         )

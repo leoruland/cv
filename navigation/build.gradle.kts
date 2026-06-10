@@ -32,6 +32,7 @@ kotlin {
             api(project(":core"))
             api(libs.jetbrains.navigation3.ui)
             api(libs.jetbrains.navigationevent.compose)
+            api(compose.components.resources)
             implementation(project(":theming"))
         }
     }

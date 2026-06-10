@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="nav_personal">Personalien</string>
+    <string name="section_contact">Kontakt</string>
+    <string name="section_languages">Sprachen</string>
+    <string name="section_education">Ausbildung</string>
+</resources>

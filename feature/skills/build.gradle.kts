@@ -32,6 +32,7 @@ kotlin {
             implementation(project(":core"))
             implementation(project(":navigation"))
             implementation(project(":theming"))
+            implementation(compose.components.resources)
         }
     }
 }

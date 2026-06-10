@@ -18,12 +18,15 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import cv_app.feature.skills.generated.resources.Res
+import cv_app.feature.skills.generated.resources.skills_headline
 import dev.leoruland.cv.feature.skills.data.DefaultSkillsDataSource
 import dev.leoruland.cv.feature.skills.domain.DefaultSkillsRepository
 import dev.leoruland.cv.feature.skills.ui.components.ChipFlowRow
 import dev.leoruland.cv.core.components.SectionTitle
 import dev.leoruland.cv.feature.skills.ui.components.TagChip
 import dev.leoruland.cv.theming.AppTheme
+import org.jetbrains.compose.resources.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
@@ -42,7 +45,7 @@ fun SkillsScreen(
         verticalArrangement = Arrangement.spacedBy(8.dp),
     ) {
         Text(
-            "Kenntnisse & Tech Stack",
+            stringResource(Res.string.skills_headline),
             style = MaterialTheme.typography.headlineSmall,
             color = MaterialTheme.colorScheme.primary,
         )
