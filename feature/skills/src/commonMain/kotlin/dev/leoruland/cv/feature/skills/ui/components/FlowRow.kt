@@ -1,8 +1,10 @@
 package dev.leoruland.cv.feature.skills.ui.components
 
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
-import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -26,12 +28,14 @@ fun ChipFlowRow(
 @Composable
 private fun ChipFlowRowPreview() {
     CvTheme {
-        ChipFlowRow {
-            TagChip("Kotlin")
-            TagChip("Coroutines")
-            TagChip("Compose")
-            TagChip("Material 3")
-            TagChip("CameraX")
+        Box(modifier = Modifier.padding(4.dp)) {
+            ChipFlowRow {
+                TagChip("Kotlin")
+                TagChip("Coroutines")
+                TagChip("Compose")
+                TagChip("Material 3")
+                TagChip("CameraX")
+            }
         }
     }
 }

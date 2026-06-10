@@ -1,6 +1,7 @@
 package dev.leoruland.cv.feature.skills.ui.components
 
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -32,6 +33,8 @@ fun TagChip(label: String, modifier: Modifier = Modifier) {
 @Composable
 private fun TagChipPreview() {
     CvTheme {
-        TagChip("Kotlin")
+        Box(modifier = Modifier.padding(4.dp)) {
+            TagChip("Kotlin")
+        }
     }
 }

@@ -43,6 +43,8 @@ fun SectionTitle(text: String, modifier: Modifier = Modifier) {
 @Composable
 private fun SectionTitlePreview() {
     CvTheme {
-        SectionTitle("Kontakt")
+        Box(modifier = Modifier.padding(4.dp)) {
+            SectionTitle("Kontakt")
+        }
     }
 }

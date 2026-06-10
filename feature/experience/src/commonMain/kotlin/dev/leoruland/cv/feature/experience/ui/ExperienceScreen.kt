@@ -181,7 +181,9 @@ private fun ExperienceScreenPreview() {
 @Composable
 private fun ExperienceCardPreview() {
     CvTheme {
-        ExperienceCard(previewEntry)
+        Box(modifier = Modifier.padding(4.dp)) {
+            ExperienceCard(previewEntry)
+        }
     }
 }
 
@@ -189,7 +191,9 @@ private fun ExperienceCardPreview() {
 @Composable
 private fun DateChipPreview() {
     CvTheme {
-        DateChip("06.2025 – heute")
+        Box(modifier = Modifier.padding(4.dp)) {
+            DateChip("06.2025 – heute")
+        }
     }
 }
 
@@ -197,6 +201,8 @@ private fun DateChipPreview() {
 @Composable
 private fun BulletRowPreview() {
     CvTheme {
-        BulletRow(Bullet("Pixolo Passport App", "Neuentwicklung in Compose."))
+        Box(modifier = Modifier.padding(4.dp)) {
+            BulletRow(Bullet("Pixolo Passport App", "Neuentwicklung in Compose."))
+        }
     }
 }

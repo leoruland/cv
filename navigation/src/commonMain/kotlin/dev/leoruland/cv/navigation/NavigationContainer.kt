@@ -263,7 +263,9 @@ private fun NavigationContainerPreviewLandscape() {
 @Composable
 private fun AppBarPreview() {
     CvTheme {
-        AppBar("Preview Title")
+        Box(modifier = Modifier.padding(4.dp)) {
+            AppBar("Preview Title")
+        }
     }
 }
 
@@ -271,11 +273,13 @@ private fun AppBarPreview() {
 @Composable
 private fun BottomBarPreview() {
     CvTheme {
-        BottomBar(
-            destinations = previewDestinations,
-            selected = PreviewRouteA,
-            onSelect = {},
-        )
+        Box(modifier = Modifier.padding(4.dp)) {
+            BottomBar(
+                destinations = previewDestinations,
+                selected = PreviewRouteA,
+                onSelect = {},
+            )
+        }
     }
 }
 
@@ -283,10 +287,12 @@ private fun BottomBarPreview() {
 @Composable
 private fun RailPreview() {
     CvTheme {
-        Rail(
-            destinations = previewDestinations,
-            selected = PreviewRouteA,
-            onSelect = {},
-        )
+        Box(modifier = Modifier.padding(4.dp)) {
+            Rail(
+                destinations = previewDestinations,
+                selected = PreviewRouteA,
+                onSelect = {},
+            )
+        }
     }
 }

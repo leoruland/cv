@@ -1,6 +1,7 @@
 package dev.leoruland.cv.feature.personal.ui
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -148,8 +149,10 @@ private fun PersonalScreenPreview() {
 @Composable
 private fun InfoCardPreview() {
     CvTheme {
-        InfoCard {
-            Text("Beispieltext in einer InfoCard")
+        Box(modifier = Modifier.padding(4.dp)) {
+            InfoCard {
+                Text("Beispieltext in einer InfoCard")
+            }
         }
     }
 }
@@ -158,6 +161,8 @@ private fun InfoCardPreview() {
 @Composable
 private fun LabeledLinePreview() {
     CvTheme {
-        LabeledLine(label = "E-Mail", value = "leoruland@web.de")
+        Box(modifier = Modifier.padding(4.dp)) {
+            LabeledLine(label = "E-Mail", value = "leoruland@web.de")
+        }
     }
 }
