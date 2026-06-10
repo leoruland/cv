@@ -1,13 +1,10 @@
 package dev.leoruland.cv.theming
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -42,28 +39,33 @@ private fun CvThemePreviewDark() {
 
 @Composable
 private fun Palette() {
-    Surface(color = MaterialTheme.colorScheme.background) {
+    val cs = MaterialTheme.colorScheme
+    Surface(color = cs.background, contentColor = cs.onBackground) {
         Column(
             modifier = Modifier.padding(16.dp).fillMaxWidth(),
-            verticalArrangement = Arrangement.spacedBy(8.dp),
+            verticalArrangement = Arrangement.spacedBy(4.dp),
         ) {
             Text("CvTheme palette", style = MaterialTheme.typography.titleSmall)
-            Swatch("primary", MaterialTheme.colorScheme.primary)
-            Swatch("primaryContainer", MaterialTheme.colorScheme.primaryContainer)
-            Swatch("secondary", MaterialTheme.colorScheme.secondary)
-            Swatch("tertiary", MaterialTheme.colorScheme.tertiary)
-            Swatch("surfaceVariant", MaterialTheme.colorScheme.surfaceVariant)
+            Swatch("primary", cs.primary, cs.onPrimary)
+            Swatch("primaryContainer", cs.primaryContainer, cs.onPrimaryContainer)
+            Swatch("secondary", cs.secondary, cs.onSecondary)
+            Swatch("secondaryContainer", cs.secondaryContainer, cs.onSecondaryContainer)
+            Swatch("tertiary", cs.tertiary, cs.onTertiary)
+            Swatch("tertiaryContainer", cs.tertiaryContainer, cs.onTertiaryContainer)
+            Swatch("background", cs.background, cs.onBackground)
+            Swatch("surface", cs.surface, cs.onSurface)
+            Swatch("surfaceVariant", cs.surfaceVariant, cs.onSurfaceVariant)
         }
     }
 }
 
 @Composable
-private fun Swatch(name: String, color: Color) {
-    Row(verticalAlignment = androidx.compose.ui.Alignment.CenterVertically) {
-        Surface(color = color, modifier = Modifier.size(24.dp)) {}
+private fun Swatch(name: String, bg: Color, fg: Color) {
+    Surface(color = bg, contentColor = fg, modifier = Modifier.fillMaxWidth()) {
         Text(
-            text = "  $name",
+            text = name,
             style = MaterialTheme.typography.labelMedium,
+            modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp),
         )
     }
 }
