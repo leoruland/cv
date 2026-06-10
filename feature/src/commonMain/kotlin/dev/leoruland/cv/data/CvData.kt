@@ -1,40 +1,5 @@
 package dev.leoruland.cv.data
 
-data class Personal(
-    val name: String,
-    val role: String,
-    val tagline: String,
-    val address: String,
-    val phone: String,
-    val email: String,
-    val languages: List<String>,
-    val education: List<EducationEntry>,
-)
-
-data class EducationEntry(
-    val degree: String,
-    val institution: String,
-    val period: String,
-)
-
-data class SkillGroup(
-    val title: String,
-    val items: List<String>,
-)
-
-data class ExperienceEntry(
-    val role: String,
-    val company: String?,
-    val period: String,
-    val description: String?,
-    val bullets: List<Bullet>,
-)
-
-data class Bullet(
-    val highlight: String?,
-    val text: String,
-)
-
 object CvData {
     val personal = Personal(
         name = "Leonardo Ruland",
