@@ -35,7 +35,7 @@ import dev.leoruland.cv.feature.experience.domain.model.Bullet
 import dev.leoruland.cv.feature.experience.domain.model.ExperienceEntry
 import dev.leoruland.cv.feature.experience.domain.DefaultExperienceRepository
 import dev.leoruland.cv.feature.experience.data.DefaultExperienceDataSource
-import dev.leoruland.cv.theming.CvTheme
+import dev.leoruland.cv.theming.AppTheme
 import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
@@ -172,7 +172,7 @@ private val previewEntry = ExperienceEntry(
 @Preview
 @Composable
 private fun ExperienceScreenPreview() {
-    CvTheme {
+    AppTheme {
         ExperienceScreen()
     }
 }
@@ -180,7 +180,7 @@ private fun ExperienceScreenPreview() {
 @Preview
 @Composable
 private fun ExperienceCardPreview() {
-    CvTheme {
+    AppTheme {
         Box(modifier = Modifier.padding(4.dp)) {
             ExperienceCard(previewEntry)
         }
@@ -190,7 +190,7 @@ private fun ExperienceCardPreview() {
 @Preview
 @Composable
 private fun DateChipPreview() {
-    CvTheme {
+    AppTheme {
         Box(modifier = Modifier.padding(4.dp)) {
             DateChip("06.2025 – heute")
         }
@@ -200,7 +200,7 @@ private fun DateChipPreview() {
 @Preview
 @Composable
 private fun BulletRowPreview() {
-    CvTheme {
+    AppTheme {
         Box(modifier = Modifier.padding(4.dp)) {
             BulletRow(Bullet("Pixolo Passport App", "Neuentwicklung in Compose."))
         }

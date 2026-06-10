@@ -9,12 +9,12 @@ import dev.leoruland.cv.feature.personal.ui.PersonalScreen
 import dev.leoruland.cv.feature.skills.navigation.SkillsRoute
 import dev.leoruland.cv.feature.skills.ui.SkillsScreen
 import dev.leoruland.cv.navigation.NavigationContainer
-import dev.leoruland.cv.theming.CvTheme
+import dev.leoruland.cv.theming.AppTheme
 import kotlinx.serialization.modules.subclass
 
 @Composable
 fun App() {
-    CvTheme {
+    AppTheme {
         NavigationContainer(
             destinations = listOf(PersonalRoute, SkillsRoute, ExperienceRoute),
             startDestination = PersonalRoute,

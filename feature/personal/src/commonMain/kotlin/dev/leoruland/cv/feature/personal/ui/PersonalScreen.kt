@@ -24,7 +24,7 @@ import androidx.compose.ui.unit.dp
 import dev.leoruland.cv.feature.personal.domain.DefaultPersonalRepository
 import dev.leoruland.cv.feature.personal.data.DefaultPersonalDataSource
 import dev.leoruland.cv.core.components.SectionTitle
-import dev.leoruland.cv.theming.CvTheme
+import dev.leoruland.cv.theming.AppTheme
 import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
@@ -140,7 +140,7 @@ private fun LabeledLine(label: String, value: String) {
 @Preview
 @Composable
 private fun PersonalScreenPreview() {
-    CvTheme {
+    AppTheme {
         PersonalScreen()
     }
 }
@@ -148,7 +148,7 @@ private fun PersonalScreenPreview() {
 @Preview
 @Composable
 private fun InfoCardPreview() {
-    CvTheme {
+    AppTheme {
         Box(modifier = Modifier.padding(4.dp)) {
             InfoCard {
                 Text("Beispieltext in einer InfoCard")
@@ -160,7 +160,7 @@ private fun InfoCardPreview() {
 @Preview
 @Composable
 private fun LabeledLinePreview() {
-    CvTheme {
+    AppTheme {
         Box(modifier = Modifier.padding(4.dp)) {
             LabeledLine(label = "E-Mail", value = "leoruland@web.de")
         }

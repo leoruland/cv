@@ -9,7 +9,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import dev.leoruland.cv.theming.CvTheme
+import dev.leoruland.cv.theming.AppTheme
 import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
@@ -32,7 +32,7 @@ fun TagChip(label: String, modifier: Modifier = Modifier) {
 @Preview
 @Composable
 private fun TagChipPreview() {
-    CvTheme {
+    AppTheme {
         Box(modifier = Modifier.padding(4.dp)) {
             TagChip("Kotlin")
         }

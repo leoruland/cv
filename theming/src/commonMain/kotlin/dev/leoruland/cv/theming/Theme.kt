@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
-fun CvTheme(
+fun AppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit,
 ) {
@@ -27,14 +27,14 @@ fun CvTheme(
 
 @Preview
 @Composable
-private fun CvThemePreviewLight() {
-    CvTheme(darkTheme = false) { Palette() }
+private fun AppThemePreviewLight() {
+    AppTheme(darkTheme = false) { Palette() }
 }
 
 @Preview
 @Composable
-private fun CvThemePreviewDark() {
-    CvTheme(darkTheme = true) { Palette() }
+private fun AppThemePreviewDark() {
+    AppTheme(darkTheme = true) { Palette() }
 }
 
 @Composable
@@ -45,7 +45,7 @@ private fun Palette() {
             modifier = Modifier.padding(16.dp).fillMaxWidth(),
             verticalArrangement = Arrangement.spacedBy(4.dp),
         ) {
-            Text("CvTheme palette", style = MaterialTheme.typography.titleSmall)
+            Text("AppTheme palette", style = MaterialTheme.typography.titleSmall)
             Swatch("primary", cs.primary, cs.onPrimary)
             Swatch("primaryContainer", cs.primaryContainer, cs.onPrimaryContainer)
             Swatch("secondary", cs.secondary, cs.onSecondary)

@@ -42,7 +42,7 @@ import androidx.navigation3.ui.NavDisplay
 import androidx.navigationevent.compose.LocalNavigationEventDispatcherOwner
 import androidx.navigationevent.compose.rememberNavigationEventDispatcherOwner
 import androidx.savedstate.serialization.SavedStateConfiguration
-import dev.leoruland.cv.theming.CvTheme
+import dev.leoruland.cv.theming.AppTheme
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.modules.PolymorphicModuleBuilder
 import kotlinx.serialization.modules.SerializersModule
@@ -228,7 +228,7 @@ private fun WithPreviewNavigationEventDispatcher(content: @Composable () -> Unit
 @Preview
 @Composable
 private fun NavigationContainerPreviewPortrait() {
-    CvTheme {
+    AppTheme {
         Box(Modifier.size(360.dp, 720.dp)) {
             WithPreviewNavigationEventDispatcher {
                 NavigationContainer(
@@ -245,7 +245,7 @@ private fun NavigationContainerPreviewPortrait() {
 @Preview
 @Composable
 private fun NavigationContainerPreviewLandscape() {
-    CvTheme {
+    AppTheme {
         Box(Modifier.size(800.dp, 400.dp)) {
             WithPreviewNavigationEventDispatcher {
                 NavigationContainer(
@@ -262,7 +262,7 @@ private fun NavigationContainerPreviewLandscape() {
 @Preview
 @Composable
 private fun AppBarPreview() {
-    CvTheme {
+    AppTheme {
         Box(modifier = Modifier.padding(4.dp)) {
             AppBar("Preview Title")
         }
@@ -272,7 +272,7 @@ private fun AppBarPreview() {
 @Preview
 @Composable
 private fun BottomBarPreview() {
-    CvTheme {
+    AppTheme {
         Box(modifier = Modifier.padding(4.dp)) {
             BottomBar(
                 destinations = previewDestinations,
@@ -286,7 +286,7 @@ private fun BottomBarPreview() {
 @Preview
 @Composable
 private fun RailPreview() {
-    CvTheme {
+    AppTheme {
         Box(modifier = Modifier.padding(4.dp)) {
             Rail(
                 destinations = previewDestinations,
