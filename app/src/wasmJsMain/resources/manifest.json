@@ -1,12 +1,12 @@
 {
-  "name": "Leonardo Ruland",
+  "name": "Leonardo Ruland Portfolio App",
   "short_name": "Leo Dev",
-  "description": "Lebenslauf von Leonardo Ruland als Progressive Web App, gebaut mit Kotlin Multiplatform und Compose.",
+  "description": "Portfolio und Lebenslauf von Leonardo Ruland als Progressive Web App. Gebaut mit Kotlin Multiplatform und Compose.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "orientation": "any",
-  "background_color": "#919E9A",
+  "background_color": "#00A485",
   "theme_color": "#919E9A",
   "lang": "de",
   "icons": [
