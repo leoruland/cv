@@ -23,19 +23,19 @@ fun ReadOnlyTagChip(
     val containerColor = if (isActive) {
         MaterialTheme.colorScheme.tertiaryContainer
     } else {
-        MaterialTheme.colorScheme.secondaryContainer
+        MaterialTheme.colorScheme.surfaceVariant
     }
     val contentColor = if (isActive) {
         MaterialTheme.colorScheme.onTertiaryContainer
     } else {
-        MaterialTheme.colorScheme.onSecondaryContainer
+        MaterialTheme.colorScheme.onSurfaceVariant
     }
     Surface(
         modifier = modifier,
         shape = MaterialTheme.shapes.extraLarge,
         color = containerColor,
         contentColor = contentColor,
-        border = BorderStroke(width = 1.dp, color = MaterialTheme.colorScheme.outline),
+//        border = BorderStroke(width = 1.dp, color = MaterialTheme.colorScheme.outline),
     ) {
         Text(
             text = label,

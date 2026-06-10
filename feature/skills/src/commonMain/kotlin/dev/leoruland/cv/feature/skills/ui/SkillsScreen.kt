@@ -61,15 +61,15 @@ fun SkillsScreen(
         groups.forEachIndexed { groupIndex, group ->
             SectionTitle(group.title)
             Card(
+                modifier = Modifier.fillMaxWidth(),
                 shape = RoundedCornerShape(16.dp),
                 colors = CardDefaults.cardColors(
                     containerColor = MaterialTheme.colorScheme.surface,
                     contentColor = MaterialTheme.colorScheme.onSurface,
                 ),
                 elevation = CardDefaults.cardElevation(defaultElevation = 0.dp),
-                modifier = Modifier.fillMaxWidth(),
             ) {
-                ChipFlowRow(modifier = Modifier.padding(14.dp)) {
+                ChipFlowRow(modifier = Modifier.padding(all = 8.dp)) {
                     group.items.forEachIndexed { skillIndex, skill ->
                         TagChip(
                             skill = skill,
