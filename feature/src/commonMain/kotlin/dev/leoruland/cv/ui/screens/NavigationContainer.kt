@@ -155,7 +155,7 @@ private fun NavigationRail(
     ) {
         Column(
             modifier = Modifier.fillMaxHeight(),
-            verticalArrangement = Arrangement.Center,
+            verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             NavigationTarget.entries.forEach { dest ->
@@ -167,7 +167,7 @@ private fun NavigationRail(
                     label = { Text(dest.label) },
                     railExpanded = true,
                 )
-                Spacer(Modifier.size(24.dp))
+                Spacer(Modifier.size(16.dp))
             }
         }
     }
