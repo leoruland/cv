@@ -29,7 +29,7 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            api(project(":feature"))
+            api(project(":core"))
             api(libs.jetbrains.navigation3.ui)
         }
     }

@@ -22,7 +22,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import dev.leoruland.cv.feature.personal.domain.DefaultPersonalRepository
 import dev.leoruland.cv.feature.personal.data.DefaultPersonalDataSource
-import dev.leoruland.cv.ui.components.SectionTitle
+import dev.leoruland.cv.core.components.SectionTitle
 
 @Composable
 fun PersonalScreen(

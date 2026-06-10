@@ -40,7 +40,7 @@ kotlin {
 }
 
 android {
-    namespace = "dev.leoruland.cv.feature"
+    namespace = "dev.leoruland.cv.core"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {

@@ -21,7 +21,7 @@ import androidx.compose.ui.unit.dp
 import dev.leoruland.cv.feature.skills.data.DefaultSkillsDataSource
 import dev.leoruland.cv.feature.skills.domain.DefaultSkillsRepository
 import dev.leoruland.cv.feature.skills.ui.components.ChipFlowRow
-import dev.leoruland.cv.ui.components.SectionTitle
+import dev.leoruland.cv.core.components.SectionTitle
 import dev.leoruland.cv.feature.skills.ui.components.TagChip
 
 @Composable

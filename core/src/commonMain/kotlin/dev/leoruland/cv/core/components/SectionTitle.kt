@@ -1,4 +1,4 @@
-package dev.leoruland.cv.ui.components
+package dev.leoruland.cv.core.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box

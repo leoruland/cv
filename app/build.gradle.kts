@@ -55,7 +55,7 @@ kotlin {
             implementation(libs.androidx.core.splashscreen)
         }
         commonMain.dependencies {
-            implementation(project(":feature"))
+            implementation(project(":core"))
             implementation(project(":navigation"))
             implementation(project(":theming"))
             implementation(project(":feature:personal"))

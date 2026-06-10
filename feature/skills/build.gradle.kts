@@ -29,7 +29,7 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            implementation(project(":feature"))
+            implementation(project(":core"))
             implementation(project(":navigation"))
         }
     }
