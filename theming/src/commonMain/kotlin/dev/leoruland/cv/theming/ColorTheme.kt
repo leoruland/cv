@@ -1,4 +1,4 @@
-package dev.leoruland.cv.ui.theme
+package dev.leoruland.cv.theming
 
 import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.darkColorScheme

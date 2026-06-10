@@ -9,7 +9,7 @@ import dev.leoruland.cv.feature.skills.navigation.SkillsRoute
 import dev.leoruland.cv.feature.skills.ui.SkillsScreen
 import androidx.navigation3.runtime.entryProvider
 import dev.leoruland.cv.navigation.NavigationContainer
-import dev.leoruland.cv.ui.theme.CvTheme
+import dev.leoruland.cv.theming.CvTheme
 import kotlinx.serialization.modules.subclass
 
 @Composable
