@@ -1,111 +1,152 @@
-# CV Leonardo Ruland – Kotlin Multiplatform PWA
+# CV Leonardo Ruland — Kotlin Multiplatform PWA
 
-Compose-Multiplatform-App, die als Android-App, iOS-App und Progressive Web App
-läuft. UI orientiert sich am Material-3-Layout aus `cv-b2-content.html`.
+Compose Multiplatform app shipping as an Android app, an iOS app, and an installable Progressive Web App. Single codebase under `dev.leoruland.cv.*`.
 
-## Drei Screens
+## Screens
 
-- **Personalien** – Kontaktdaten, Tagline, Ausbildung
-- **Kenntnisse** – Architektur, Frameworks, Build/Tracking
-- **Erfahrung** – Berufsstationen mit Bullets
+- **Personalien** — contact, tagline, education
+- **Kenntnisse** — architecture, frameworks, build/tracking
+- **Erfahrung** — work history with bullet highlights
 
-## Responsive Navigation
+## Architecture
 
-`App.kt` wertet `BoxWithConstraints` aus:
+Multi-module Gradle build. Module dependencies point inward: feature modules consume `:core`, `:navigation`, `:theming`.
 
-- `maxWidth <= maxHeight` (Portrait) → `NavigationBar` (Bottom)
-- `maxWidth > maxHeight`  (Landscape) → `NavigationRail` (Seitenleiste)
+| Module | Responsibility |
+|---|---|
+| `:app` | Composition root. Wires routes, hosts `NavigationContainer`. |
+| `:core` | Shared low-level UI building blocks (e.g. `SectionTitle`). |
+| `:theming` | `AppTheme`, light/dark color schemes, palette preview. |
+| `:navigation` | `NavigationTarget` interface, responsive `NavigationContainer`. |
+| `:feature:personal` | Personal data screen + route. |
+| `:feature:skills` | Skills screen + route. |
+| `:feature:experience` | Experience screen + route. |
+
+## Responsive navigation
+
+`NavigationContainer` (in `:navigation`) wraps the active screen and chooses the chrome via `BoxWithConstraints`:
+
+- `maxWidth <= maxHeight` (portrait) → `NavigationBar` at the bottom.
+- `maxWidth > maxHeight` (landscape) → `NavigationRail` on the side.
+
+Each route implements `NavigationTarget` with `labelRes: StringResource` + `icon: ImageVector`. Labels resolve via `stringResource(target.labelRes)`.
+
+## Theme
+
+`AppTheme` lives in `theming/src/commonMain/kotlin/dev/leoruland/cv/theming/Theme.kt`. Color seeds are defined in the same module's `Color.kt`:
+
+- primary `#00A485` (teal-green)
+- secondary `#53E3BF` (mint-teal)
+- tertiary `#D61FDC` (magenta)
+- error `#FF5449` (canonical M3 error T60)
+- surface `#D3E0DC`
+- surfaceVariant `#919E9A`
+
+All UI reads colors via `MaterialTheme.colorScheme.*`. To check contrast in light and dark, open `CvThemePreviewLight` / `CvThemePreviewDark` in `Theme.kt` — they render every role pair (color + on-color) as full-width swatches.
+
+## Strings & i18n
+
+User-visible strings live in per-module `src/commonMain/composeResources/values/strings.xml`. Access from Compose:
+
+```kotlin
+import cv_app.feature.personal.generated.resources.Res
+import cv_app.feature.personal.generated.resources.section_contact
+import org.jetbrains.compose.resources.stringResource
+
+SectionTitle(stringResource(Res.string.section_contact))
+```
+
+To add English (or any other language): drop a `values-en/strings.xml` into the same module with the same keys. No Kotlin changes needed.
+
+Currently localized: `:feature:personal`, `:feature:skills`, `:feature:experience`, `:navigation` (preview-only tab labels).
 
 ## Setup
-
-Im Verzeichnis `app/` einmalig den Gradle-Wrapper anlegen:
 
 ```bash
 cd app
 gradle wrapper --gradle-version 8.10.2
 ```
 
-Versionen (`gradle/libs.versions.toml`):
+Tool versions (`gradle/libs.versions.toml`):
 - Kotlin 2.1.0
 - Compose Multiplatform 1.7.3
 - AGP 8.7.3
 - compileSdk 35, minSdk 24
 
-## Bauen & Ausführen
+## Build & run
 
-**Android Debug-APK:**
+See [`coding_agents/build_commands.md`](./coding_agents/build_commands.md) for the full command reference. Quick start:
+
 ```bash
+# Validation
+./gradlew compileDebugKotlinAndroid
+
+# Android
 ./gradlew :app:assembleDebug
-./gradlew :app:installDebug   # bei verbundenem Gerät
-```
+./gradlew :app:installDebug   # with a device/emulator connected
 
-**Web (PWA) lokal starten:**
-```bash
-./gradlew :app:wasmJsBrowserDevelopmentRun
-```
-Produktions-Build:
-```bash
-./gradlew :app:wasmJsBrowserDistribution
+# Web (PWA)
+./gradlew :app:wasmJsBrowserDevelopmentRun           # dev
+./gradlew :app:wasmJsBrowserDistribution             # production bundle
 # Output: app/build/dist/wasmJs/productionExecutable
+
+# iOS
+# Open iosApp/iosApp.xcodeproj in Xcode, build & run on simulator.
 ```
-Den Inhalt dieses Ordners über HTTPS deployen, dann installiert der Browser
-die App als PWA (Service Worker + Manifest sind unter `resources/`).
 
-**iOS:** Xcode-Projekt unter `iosApp/` öffnen und das KMP-Framework
-`ComposeApp` als Build-Dependency einbinden. Alternativ über das KMP-Plugin
-in Android Studio / Fleet das Modul `app` für `iosSimulatorArm64`
-bauen und den Simulator starten.
+## App icon
 
-## App-Icon
+Master file: `app/src/wasmJsMain/resources/icon.svg`. Sizes are rendered with `qlmanage` + `sips`:
 
-Master-Datei: `app/src/wasmJsMain/resources/icon.svg` (Primary-Hintergrund
-`#6750A4`, Schrift `#EADDFF`, zwei Zeilen „leo" / „dev").
+- **PWA**: `icon-192.png`, `icon-512.png` in `wasmJsMain/resources/`
+- **Android**: `mipmap-{mdpi,hdpi,xhdpi,xxhdpi,xxxhdpi}/ic_launcher{,_round}.png`, wired in `AndroidManifest.xml`
+- **iOS**: `Assets.xcassets/AppIcon.appiconset/` with 20/29/40/60 pt (@2x, @3x) plus 1024 px marketing icon
 
-Aus dem SVG wurden via `qlmanage` + `sips` alle nötigen Größen gerendert:
-- **PWA:** `icon-192.png`, `icon-512.png` (in `wasmJsMain/resources/`)
-- **Android:** `mipmap-{mdpi,hdpi,xhdpi,xxhdpi,xxxhdpi}/ic_launcher.png` und
-  `ic_launcher_round.png`, eingebunden in `AndroidManifest.xml`
-- **iOS:** `Assets.xcassets/AppIcon.appiconset/` mit 20/29/40/60-pt (@2x, @3x)
-  und 1024 px Marketing-Icon plus `Contents.json`
+Re-render after editing the SVG:
 
-Neu generieren nach Änderung am SVG:
 ```bash
-SVG=app/app/src/wasmJsMain/resources/icon.svg
+SVG=app/src/wasmJsMain/resources/icon.svg
 TMP=$(mktemp -d)
 qlmanage -t -s 1024 -o "$TMP" "$SVG"
-sips -z 192 192 "$TMP/icon.svg.png" --out app/app/src/wasmJsMain/resources/icon-192.png
-# ... usw. für weitere Größen
+sips -z 192 192 "$TMP/icon.svg.png" --out app/src/wasmJsMain/resources/icon-192.png
+# … repeat for the other sizes
 ```
 
-## Theme
-
-`ui/theme/Color.kt` greift Hex-Werte aus dem HTML-CV auf:
-- Primary `#6750A4`, PrimaryContainer `#EADDFF`, OnPrimaryContainer `#21005D`
-- SecondaryContainer `#E8DEF8`, Outline `#CAC4D0`
-- Background/Surface `#FEF7FF`, SurfaceVariant `#F3EDF7`
-
-## Struktur
+## Structure
 
 ```
 app/
 ├── settings.gradle.kts
 ├── build.gradle.kts
-├── gradle.properties
 ├── gradle/libs.versions.toml
-├── app/
-│   ├── build.gradle.kts
-│   └── src/
-│       ├── commonMain/kotlin/com/leoruland/cv/
-│       │   ├── App.kt
-│       │   ├── data/CvData.kt
-│       │   ├── ui/Navigation.kt
-│       │   ├── ui/theme/{Theme,Color}.kt
-│       │   ├── ui/components/{SectionTitle,TagChip,FlowRow}.kt
-│       │   └── ui/screens/{Personal,Skills,Experience}Screen.kt
-│       ├── androidMain/{kotlin,res,AndroidManifest.xml}
-│       ├── iosMain/kotlin/com/leoruland/cv/MainViewController.kt
-│       └── wasmJsMain/
-│           ├── kotlin/com/leoruland/cv/main.kt
-│           └── resources/{index.html, manifest.json, sw.js}
-└── iosApp/iosApp/{iOSApp.swift, Info.plist}
+├── README.md
+├── CLAUDE.md / AGENTS.md / GEMINI.md      # agent-doc routers → coding_agents/
+├── coding_agents/                          # binding instructions for AI/coding agents
+│   ├── agent_principles.md
+│   ├── coding_guidelines.md
+│   ├── coding_templates.md
+│   ├── build_commands.md
+│   └── security.md
+├── app/                                    # :app — composition root
+│   └── src/{commonMain,androidMain,iosMain,wasmJsMain}/…
+├── core/                                   # :core — shared UI building blocks
+│   └── src/commonMain/kotlin/dev/leoruland/cv/core/components/SectionTitle.kt
+├── theming/                                # :theming — AppTheme + Color.kt
+│   └── src/commonMain/kotlin/dev/leoruland/cv/theming/{Color,Theme}.kt
+├── navigation/                             # :navigation — NavigationTarget + container
+│   └── src/commonMain/
+│       ├── kotlin/dev/leoruland/cv/navigation/{NavigationTarget,NavigationContainer}.kt
+│       └── composeResources/values/strings.xml
+├── feature/
+│   ├── personal/                           # :feature:personal
+│   │   └── src/commonMain/
+│   │       ├── kotlin/dev/leoruland/cv/feature/personal/{ui,navigation,domain,data}/
+│   │       └── composeResources/values/strings.xml
+│   ├── skills/                             # :feature:skills (same layout)
+│   └── experience/                         # :feature:experience (same layout)
+└── iosApp/                                 # Xcode project shell
 ```
+
+## Agent documentation
+
+Any AI or human contributor making code changes must read [`coding_agents/`](./coding_agents/) first. The three router files at the repo root (`CLAUDE.md`, `AGENTS.md`, `GEMINI.md`) all point there.

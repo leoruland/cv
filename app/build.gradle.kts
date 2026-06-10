@@ -19,7 +19,6 @@ kotlin {
     }
 
     listOf(
-        iosX64(),
         iosArm64(),
         iosSimulatorArm64()
     ).forEach { target ->
@@ -50,12 +49,16 @@ kotlin {
 
     sourceSets {
         androidMain.dependencies {
-            implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
             implementation(libs.androidx.core.splashscreen)
         }
         commonMain.dependencies {
-            implementation(project(":feature"))
+            implementation(project(":core"))
+            implementation(project(":navigation"))
+            implementation(project(":theming"))
+            implementation(project(":feature:personal"))
+            implementation(project(":feature:skills"))
+            implementation(project(":feature:experience"))
         }
     }
 }
@@ -68,7 +71,7 @@ android {
         applicationId = "dev.leoruland.cv"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 1
+        versionCode = 202606101
         versionName = "1.0"
     }
     packaging {
@@ -85,4 +88,8 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+}
+
+dependencies {
+    debugImplementation(libs.compose.ui.tooling)
 }

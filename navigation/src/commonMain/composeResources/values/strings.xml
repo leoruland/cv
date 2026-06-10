@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="preview_tab_a">Tab A</string>
+    <string name="preview_tab_b">Tab B</string>
+</resources>

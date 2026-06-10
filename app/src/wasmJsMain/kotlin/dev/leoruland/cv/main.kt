@@ -6,6 +6,6 @@ import kotlinx.browser.document
 
 @OptIn(ExperimentalComposeUiApi::class)
 fun main() {
-    document.title = "Leonardo Ruland"
+    document.title = "Leonardo Ruland: Portfolio App"
     ComposeViewport(viewportContainerId = "ComposeTarget") { App() }
 }

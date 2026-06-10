@@ -28,4 +28,9 @@ dependencyResolutionManagement {
 }
 
 include(":app")
-include(":feature")
+include(":core")
+include(":feature:personal")
+include(":feature:skills")
+include(":feature:experience")
+include(":navigation")
+include(":theming")
