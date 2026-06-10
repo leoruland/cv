@@ -27,7 +27,7 @@ fun ProjectsSection(
     val visible = if (activeSkillNames.isEmpty()) {
         projects
     } else {
-        projects.filter { project -> project.tags.any { it in activeSkillNames } }
+        projects.filter { project -> project.tags.containsAll(activeSkillNames) }
     }
     Column(
         modifier = modifier.fillMaxWidth(),
