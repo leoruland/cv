@@ -32,6 +32,7 @@ kotlin {
             api(compose.foundation)
             api(compose.material3)
             api(compose.ui)
+            implementation(libs.compose.ui.tooling.preview)
         }
     }
 }
@@ -48,4 +49,8 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+}
+
+dependencies {
+    debugImplementation(libs.compose.ui.tooling)
 }

@@ -35,6 +35,8 @@ import dev.leoruland.cv.feature.experience.domain.model.Bullet
 import dev.leoruland.cv.feature.experience.domain.model.ExperienceEntry
 import dev.leoruland.cv.feature.experience.domain.DefaultExperienceRepository
 import dev.leoruland.cv.feature.experience.data.DefaultExperienceDataSource
+import dev.leoruland.cv.theming.CvTheme
+import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
 fun ExperienceScreen(
@@ -153,5 +155,48 @@ private fun BulletRow(bullet: Bullet) {
             style = MaterialTheme.typography.bodyMedium,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
+    }
+}
+
+private val previewEntry = ExperienceEntry(
+    role = "Software Engineer Mobile",
+    company = "apploft. GmbH",
+    period = "06.2025 – heute",
+    description = "End-to-End-Verantwortung für die Pixolo Passport App.",
+    bullets = listOf(
+        Bullet("Pixolo Passport App", "Neuentwicklung in Compose."),
+        Bullet(null, "BFSG-Anpassungen über mehrere Apps."),
+    ),
+)
+
+@Preview
+@Composable
+private fun ExperienceScreenPreview() {
+    CvTheme {
+        ExperienceScreen()
+    }
+}
+
+@Preview
+@Composable
+private fun ExperienceCardPreview() {
+    CvTheme {
+        ExperienceCard(previewEntry)
+    }
+}
+
+@Preview
+@Composable
+private fun DateChipPreview() {
+    CvTheme {
+        DateChip("06.2025 – heute")
+    }
+}
+
+@Preview
+@Composable
+private fun BulletRowPreview() {
+    CvTheme {
+        BulletRow(Bullet("Pixolo Passport App", "Neuentwicklung in Compose."))
     }
 }

@@ -31,6 +31,7 @@ kotlin {
         commonMain.dependencies {
             implementation(project(":core"))
             implementation(project(":navigation"))
+            implementation(project(":theming"))
         }
     }
 }
@@ -47,4 +48,8 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+}
+
+dependencies {
+    debugImplementation(libs.compose.ui.tooling)
 }

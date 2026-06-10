@@ -23,6 +23,8 @@ import dev.leoruland.cv.feature.skills.domain.DefaultSkillsRepository
 import dev.leoruland.cv.feature.skills.ui.components.ChipFlowRow
 import dev.leoruland.cv.core.components.SectionTitle
 import dev.leoruland.cv.feature.skills.ui.components.TagChip
+import dev.leoruland.cv.theming.CvTheme
+import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
 fun SkillsScreen(
@@ -61,5 +63,13 @@ fun SkillsScreen(
                 }
             }
         }
+    }
+}
+
+@Preview
+@Composable
+private fun SkillsScreenPreview() {
+    CvTheme {
+        SkillsScreen()
     }
 }

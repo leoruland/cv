@@ -31,6 +31,8 @@ kotlin {
         commonMain.dependencies {
             api(project(":core"))
             api(libs.jetbrains.navigation3.ui)
+            api(libs.jetbrains.navigationevent.compose)
+            implementation(project(":theming"))
         }
     }
 }
@@ -47,4 +49,8 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+}
+
+dependencies {
+    debugImplementation(libs.compose.ui.tooling)
 }

@@ -15,6 +15,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
+import dev.leoruland.cv.theming.CvTheme
+import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
 fun SectionTitle(text: String, modifier: Modifier = Modifier) {
@@ -34,5 +36,13 @@ fun SectionTitle(text: String, modifier: Modifier = Modifier) {
             color = MaterialTheme.colorScheme.primary,
             modifier = Modifier.padding(start = 10.dp),
         )
+    }
+}
+
+@Preview
+@Composable
+private fun SectionTitlePreview() {
+    CvTheme {
+        SectionTitle("Kontakt")
     }
 }

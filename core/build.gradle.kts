@@ -34,7 +34,8 @@ kotlin {
             api(compose.materialIconsExtended)
             api(compose.ui)
             api(compose.components.resources)
-            api(compose.components.uiToolingPreview)
+            api(libs.compose.ui.tooling.preview)
+            implementation(project(":theming"))
         }
     }
 }
@@ -51,4 +52,8 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+}
+
+dependencies {
+    debugImplementation(libs.compose.ui.tooling)
 }
