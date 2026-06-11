@@ -1,14 +1,14 @@
 package dev.leoruland.cv.feature.skills.ui
 
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
@@ -24,7 +24,7 @@ import dev.leoruland.cv.core.components.ChipFlowRow
 import dev.leoruland.cv.core.components.SectionTitle
 import dev.leoruland.cv.feature.projects.data.DefaultProjectsDataSource
 import dev.leoruland.cv.feature.projects.domain.DefaultProjectsRepository
-import dev.leoruland.cv.feature.projects.ui.ProjectsSection
+import dev.leoruland.cv.feature.projects.ui.projectsSection
 import dev.leoruland.cv.feature.skills.data.DefaultSkillsDataSource
 import dev.leoruland.cv.feature.skills.domain.DefaultSkillsRepository
 import dev.leoruland.cv.feature.skills.ui.components.TagChip
@@ -45,20 +45,22 @@ fun SkillsScreen(
     val groups by viewModel.skillGroups
     val activeSkillNames by viewModel.activeSkillNames
     val projects by viewModel.projects
-    Column(
-        modifier = modifier
-            .fillMaxWidth()
-            .verticalScroll(rememberScrollState())
-            .padding(horizontal = 20.dp, vertical = 16.dp),
+    LazyColumn(
+        modifier = modifier.fillMaxWidth(),
+        contentPadding = PaddingValues(horizontal = 20.dp, vertical = 16.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp),
     ) {
-        Text(
-            stringResource(Res.string.skills_headline),
-            style = MaterialTheme.typography.headlineSmall,
-            color = MaterialTheme.colorScheme.primary,
-        )
-        Spacer(Modifier.height(4.dp))
-        groups.forEachIndexed { groupIndex, group ->
+        item(key = "skills-headline") {
+            Text(
+                stringResource(Res.string.skills_headline),
+                style = MaterialTheme.typography.headlineSmall,
+                color = MaterialTheme.colorScheme.primary,
+            )
+        }
+        item(key = "skills-headline-spacer") {
+            Spacer(Modifier.height(4.dp))
+        }
+        itemsIndexed(items = groups, key = { _, group -> group.title }) { groupIndex, group ->
             SectionTitle(group.title)
             Card(
                 modifier = Modifier.fillMaxWidth(),
@@ -79,8 +81,10 @@ fun SkillsScreen(
                 }
             }
         }
-        Spacer(Modifier.height(16.dp))
-        ProjectsSection(
+        item(key = "projects-spacer") {
+            Spacer(Modifier.height(16.dp))
+        }
+        projectsSection(
             projects = projects,
             activeSkillNames = activeSkillNames,
         )
