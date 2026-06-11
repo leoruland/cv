@@ -52,7 +52,7 @@ private fun ReadOnlyTagChipPreview() {
         Box(modifier = Modifier.padding(4.dp)) {
             Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
                 ReadOnlyTagChip(label = "Kotlin", isActive = true)
-                ReadOnlyTagChip(label = "Material 3", isActive = false)
+                ReadOnlyTagChip(label = "Material Design", isActive = false)
             }
         }
     }
