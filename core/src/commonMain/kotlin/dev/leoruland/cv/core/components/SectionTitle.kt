@@ -22,7 +22,7 @@ import androidx.compose.ui.tooling.preview.Preview
 fun SectionTitle(text: String, modifier: Modifier = Modifier) {
     Row(
         verticalAlignment = Alignment.CenterVertically,
-        modifier = modifier.padding(vertical = 8.dp),
+        modifier = modifier.padding(vertical = 4.dp),
     ) {
         Box(
             modifier = Modifier
