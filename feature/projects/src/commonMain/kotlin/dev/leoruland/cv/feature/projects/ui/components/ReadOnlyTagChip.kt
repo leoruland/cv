@@ -1,6 +1,5 @@
 package dev.leoruland.cv.feature.projects.ui.components
 
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -21,12 +20,12 @@ fun ReadOnlyTagChip(
     modifier: Modifier = Modifier,
 ) {
     val containerColor = if (isActive) {
-        MaterialTheme.colorScheme.tertiaryContainer
+        MaterialTheme.colorScheme.tertiary
     } else {
         MaterialTheme.colorScheme.surfaceVariant
     }
     val contentColor = if (isActive) {
-        MaterialTheme.colorScheme.onTertiaryContainer
+        MaterialTheme.colorScheme.onTertiary
     } else {
         MaterialTheme.colorScheme.onSurfaceVariant
     }
@@ -35,7 +34,6 @@ fun ReadOnlyTagChip(
         shape = MaterialTheme.shapes.extraLarge,
         color = containerColor,
         contentColor = contentColor,
-//        border = BorderStroke(width = 1.dp, color = MaterialTheme.colorScheme.outline),
     ) {
         Text(
             text = label,

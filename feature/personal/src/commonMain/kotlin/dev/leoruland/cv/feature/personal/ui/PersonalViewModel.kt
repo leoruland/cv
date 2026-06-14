@@ -9,5 +9,5 @@ class PersonalViewModel(
     repository: PersonalRepository,
 ) {
     private val _personal = mutableStateOf(repository.getPersonal())
-    val personal: State<Personal> = _personal
+    val personalData: State<Personal> = _personal
 }

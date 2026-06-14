@@ -19,12 +19,14 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.NavigationRail
+import androidx.compose.material3.NavigationRailDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.WideNavigationRailItem
+import androidx.compose.material3.WideNavigationRailItemDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.remember
@@ -192,6 +194,7 @@ private fun Rail(
                     onClick = { onSelect(dest) },
                     icon = { Icon(dest.icon, contentDescription = label) },
                     label = { Text(label) },
+                    colors = WideNavigationRailItemDefaults.colors().copy(selectedTextColor = MaterialTheme.colorScheme.onSecondary),
                     railExpanded = true,
                 )
                 Spacer(Modifier.size(16.dp))

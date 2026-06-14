@@ -39,29 +39,29 @@ private fun AppThemePreviewDark() {
 
 @Composable
 private fun Palette() {
-    val cs = MaterialTheme.colorScheme
-    Surface(color = cs.background, contentColor = cs.onBackground) {
+    val colorScheme = MaterialTheme.colorScheme
+    Surface(color = colorScheme.background, contentColor = colorScheme.onBackground) {
         Column(
             modifier = Modifier.padding(16.dp).fillMaxWidth(),
             verticalArrangement = Arrangement.spacedBy(4.dp),
         ) {
             Text("AppTheme palette", style = MaterialTheme.typography.titleSmall)
-            Swatch("primary", cs.primary, cs.onPrimary)
-            Swatch("primaryContainer", cs.primaryContainer, cs.onPrimaryContainer)
-            Swatch("secondary", cs.secondary, cs.onSecondary)
-            Swatch("secondaryContainer", cs.secondaryContainer, cs.onSecondaryContainer)
-            Swatch("tertiary", cs.tertiary, cs.onTertiary)
-            Swatch("tertiaryContainer", cs.tertiaryContainer, cs.onTertiaryContainer)
-            Swatch("background", cs.background, cs.onBackground)
-            Swatch("surface", cs.surface, cs.onSurface)
-            Swatch("surfaceVariant", cs.surfaceVariant, cs.onSurfaceVariant)
+            Swatch("primary", colorScheme.primary, colorScheme.onPrimary)
+            Swatch("primaryContainer", colorScheme.primaryContainer, colorScheme.onPrimaryContainer)
+            Swatch("secondary", colorScheme.secondary, colorScheme.onSecondary)
+            Swatch("secondaryContainer", colorScheme.secondaryContainer, colorScheme.onSecondaryContainer)
+            Swatch("tertiary", colorScheme.tertiary, colorScheme.onTertiary)
+            Swatch("tertiaryContainer", colorScheme.tertiaryContainer, colorScheme.onTertiaryContainer)
+            Swatch("background", colorScheme.background, colorScheme.onBackground)
+            Swatch("surface", colorScheme.surface, colorScheme.onSurface)
+            Swatch("surfaceVariant", colorScheme.surfaceVariant, colorScheme.onSurfaceVariant)
         }
     }
 }
 
 @Composable
-private fun Swatch(name: String, bg: Color, fg: Color) {
-    Surface(color = bg, contentColor = fg, modifier = Modifier.fillMaxWidth()) {
+private fun Swatch(name: String, background: Color, foreground: Color) {
+    Surface(color = background, contentColor = foreground, modifier = Modifier.fillMaxWidth()) {
         Text(
             text = name,
             style = MaterialTheme.typography.labelMedium,

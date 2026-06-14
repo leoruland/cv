@@ -1,5 +1,6 @@
 package dev.leoruland.cv.feature.personal.ui
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -39,9 +40,10 @@ fun PersonalScreen(
         PersonalViewModel(DefaultPersonalRepository(DefaultPersonalDataSource()))
     },
 ) {
-    val p by viewModel.personal
+    val data by viewModel.personalData
     Column(
         modifier = modifier
+            .background(MaterialTheme.colorScheme.background)
             .fillMaxWidth()
             .verticalScroll(rememberScrollState())
             .padding(horizontal = 20.dp, vertical = 16.dp),
@@ -55,13 +57,13 @@ fun PersonalScreen(
         ) {
             Column(Modifier.padding(20.dp)) {
                 Text(
-                    text = p.name,
+                    text = data.name,
                     style = MaterialTheme.typography.headlineMedium,
                     fontWeight = FontWeight.Medium,
                 )
                 Spacer(Modifier.height(4.dp))
                 Text(
-                    text = p.role,
+                    text = data.role,
                     style = MaterialTheme.typography.titleMedium,
                     color = MaterialTheme.colorScheme.primary,
                 )
@@ -72,7 +74,7 @@ fun PersonalScreen(
                     shape = RoundedCornerShape(16.dp),
                 ) {
                     Text(
-                        text = p.tagline,
+                        text = data.tagline,
                         style = MaterialTheme.typography.bodyMedium,
                         modifier = Modifier.padding(14.dp),
                     )
@@ -82,20 +84,20 @@ fun PersonalScreen(
 
         SectionTitle(stringResource(Res.string.section_contact))
         InfoCard {
-            LabeledLine("Adresse", p.address)
-            LabeledLine("Telefon", p.phone)
-            LabeledLine("E-Mail", p.email)
+            LabeledLine("Adresse", data.address)
+            LabeledLine("Telefon", data.phone)
+            LabeledLine("E-Mail", data.email)
         }
 
         SectionTitle(stringResource(Res.string.section_languages))
         InfoCard {
-            p.languages.forEach { lang ->
+            data.languages.forEach { lang ->
                 Text(lang, style = MaterialTheme.typography.bodyMedium)
             }
         }
 
         SectionTitle(stringResource(Res.string.section_education))
-        p.education.forEach { e ->
+        data.education.forEach { e ->
             InfoCard {
                 Text(
                     e.degree,
