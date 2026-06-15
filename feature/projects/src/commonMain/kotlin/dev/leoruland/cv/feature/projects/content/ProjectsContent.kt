@@ -14,9 +14,9 @@ object ProjectsContent {
             tags = listOf(
                 "Kotlin", "Jetpack Compose", "Compose Navigation", "Material Design",
                 "MVVM", "Clean Architecture", "Multi-Module Architecture",
-                "Coroutines", "Flow",
+                "Coroutines", "Kotlin Flow",
                 "CameraX", "ML Kit", "Retrofit", "OkHttp", "DataStore",
-                "Firebase", "Lottie", "Coil", "Timber",
+                "Firebase", "Lottie", "Coil",
             ),
         ),
         Project(
@@ -27,9 +27,9 @@ object ProjectsContent {
                     "Shop-Toolbar, Offers-Search und Feature-Flag-Setup; laufende Feature-Arbeit " +
                     "in gemischtem Kotlin/Java-Code.",
             tags = listOf(
-                "Kotlin", "Java", "Jetpack Compose", "Material Design", "MVVM",
-                "Multi-Module Architecture", "Coroutines", "Retrofit", "Firebase",
-                "Audit", "TalkBack",
+                "Kotlin", "Java", "Jetpack Compose", "Compose Navigation", "Material Design", "MVVM",
+                "Multi-Module Architecture", "Coroutines", "Retrofit", "Firebase", "Google Pay",
+                "Accessibility Audit", "TalkBack",
             ),
         ),
         Project(
@@ -40,8 +40,9 @@ object ProjectsContent {
                     "Widget-Layouts, Map-Darstellung, Code Reviews und laufende UI-Anpassungen " +
                     "über mehrere Releases.",
             tags = listOf(
-                "Kotlin", "Jetpack Compose", "Material Design", "Coroutines",
+                "Kotlin", "Jetpack Compose", "Compose Navigation", "Material Design", "Coroutines",
                 "Google Maps", "Retrofit", "Firebase", "OneSignal",
+                "Accessibility Audit",
             ),
         ),
         Project(
@@ -52,8 +53,9 @@ object ProjectsContent {
                     "Optimierungen für Screen Reader, Compose-FlowRow-Migration, Manual-Entry-" +
                     "Widgets und CameraX-basierter Kundenkarten-Scan.",
             tags = listOf(
-                "Kotlin", "Jetpack Compose", "MVVM", "Coroutines",
+                "Kotlin", "Jetpack Compose", "Compose Navigation", "MVVM", "Coroutines",
                 "CameraX", "Retrofit", "Firebase",
+                "Accessibility Audit",
                 "TalkBack",
             ),
         ),
@@ -68,6 +70,7 @@ object ProjectsContent {
                 "Kotlin", "Jetpack Compose", "Coroutines",
                 "Health Connect", "Retrofit", "Firebase", "Usercentrics",
                 "Gigya",
+                "Accessibility Audit",
             ),
         ),
         Project(
@@ -78,7 +81,7 @@ object ProjectsContent {
                     "Urlaubsübersicht mit Jahresfilter, Absences-API, Styleguide-Refresh und " +
                     "MVVM-Architektur-Cleanup.",
             tags = listOf(
-                "Kotlin", "Jetpack Compose", "Material Design", "MVVM",
+                "Kotlin", "Jetpack Compose", "Compose Navigation", "Material Design", "MVVM",
                 "Clean Architecture", "Multi-Module Architecture", "Coroutines",
                 "Retrofit", "Coil", "Firebase", "Matomo", "Auth0",
             ),
@@ -90,7 +93,7 @@ object ProjectsContent {
             description = "Tankstellen/Preisfinder. Alpha-/Beta-Build-Types eingerichtet, " +
                     "Release-Pipeline und Branch-Scoping in der CI angepasst.",
             tags = listOf(
-                "Kotlin", "Jetpack Compose", "Material Design",
+                "Kotlin", "Jetpack Compose", "Compose Navigation", "Material Design",
                 "Clean Architecture", "Multi-Module Architecture",
                 "Coroutines", "Retrofit", "Firebase", "Google Maps",
             ),
@@ -115,7 +118,7 @@ object ProjectsContent {
                     "Merchandising. Beiträge an Match-Center und Wettbewerbs-Features.",
             tags = listOf(
                 "Kotlin", "View System (XML)", "Material Design",
-                "Retrofit", "Gson", "Firebase",
+                "Retrofit", "Firebase",
             ),
         ),
         Project(
@@ -126,7 +129,7 @@ object ProjectsContent {
                     "Edge-to-Edge UI, Coupons und Wartungs-Releases.",
             tags = listOf(
                 "Kotlin", "Java", "View System (XML)", "Material Design",
-                "Retrofit", "Gson", "Google Maps", "Firebase",
+                "Retrofit", "Firebase",
             ),
         ),
         Project(
@@ -136,9 +139,10 @@ object ProjectsContent {
             description = "Reiseführer- und Concierge-App für Norderney mit News und Events. " +
                     "Newsletter-Tile und Accessibility-Verbesserungen.",
             tags = listOf(
-                "Kotlin", "View System (XML)", "Material Design",
+                "Kotlin", "Jetpack Compose", "Compose Navigation", "View System (XML)", "Material Design",
                 "Clean Architecture", "Multi-Module Architecture", "Coroutines",
-                "Firebase", "OneSignal", "TalkBack",
+                "Firebase", "OneSignal",
+                "Accessibility Audit", "TalkBack",
             ),
         ),
         Project(
@@ -148,7 +152,7 @@ object ProjectsContent {
             description = "Geschenklos-Plattform der Deutschen Fernsehlotterie mit Gutschein-" +
                     "Management und PDF-Download. Modularisierte Multi-Feature-Architektur.",
             tags = listOf(
-                "Kotlin", "Jetpack Compose", "Material Design", "MVVM", "Coroutines",
+                "Kotlin", "Jetpack Compose", "Compose Navigation", "Material Design", "MVVM", "Coroutines",
                 "Retrofit", "Coil", "Firebase",
             ),
         ),
@@ -159,7 +163,7 @@ object ProjectsContent {
             description = "Pollenflug-Vorhersage mit Location-Services und Wetter-Integration. " +
                     "Maintenance-Release mit Crashfix und Layout-Korrekturen.",
             tags = listOf(
-                "Kotlin", "Jetpack Compose",  "View System (XML)",
+                "Kotlin", "Jetpack Compose", "Compose Navigation", "View System (XML)",
                 "Coroutines", "Retrofit", "Firebase",
             ),
         ),
@@ -170,9 +174,9 @@ object ProjectsContent {
             description = "Radio-Streaming- und Discovery-App mit Playlist-Management und " +
                     "Download-Feature. Compose-basierte UI mit serialisierten Content-Modellen.",
             tags = listOf(
-                "Kotlin", "Jetpack Compose", "Material Design", "MVVM",
+                "Kotlin", "Jetpack Compose", "Compose Navigation", "Material Design", "MVVM",
                 "Clean Architecture", "Multi-Module Architecture",
-                "Retrofit", "Coil", "ExoPlayer", "Firebase", "Timber",
+                "Retrofit", "Coil", "ExoPlayer", "Firebase",
             ),
         ),
         Project(
@@ -183,7 +187,8 @@ object ProjectsContent {
                     "Bugfixes am QR-Flow, neue Tiles, Navigations-Fixes und App-Icon-Update.",
             tags = listOf(
                 "Kotlin", "Jetpack Compose", "Compose Navigation", "Material Design",
-                "Coroutines", "CameraX", "ML Kit", "Retrofit", "Firebase", "TalkBack",
+                "Coroutines", "CameraX", "Retrofit", "Firebase",
+                "Accessibility Audit", "TalkBack",
             ),
         ),
         Project(
@@ -193,8 +198,8 @@ object ProjectsContent {
             description = "Ernährungs- und Challenge-App mit Quiz, Level-Tracking und " +
                     "Achievements. Modularisierte Feature-Architektur und Firebase-Analytics.",
             tags = listOf(
-                "Kotlin", "Jetpack Compose", "Material Design", "MVVM",
-                "Coroutines", "Flow", "Retrofit", "Firebase", "Auth0",
+                "Kotlin", "Jetpack Compose", "Compose Navigation", "Material Design", "MVVM",
+                "Coroutines", "Kotlin Flow", "Retrofit", "Firebase", "Auth0",
             ),
         ),
         Project(
@@ -216,7 +221,7 @@ object ProjectsContent {
                     "Java/Kotlin-Mix; Privacy-Policy-Update und klassische Android-Patterns.",
             tags = listOf(
                 "Java", "Kotlin", "View System (XML)", "Material Design",
-                "Coroutines", "Retrofit", "Gson", "Google Maps", "Firebase",
+                "Coroutines", "Retrofit", "Firebase",
             ),
         ),
         Project(
@@ -238,9 +243,8 @@ object ProjectsContent {
                     "Theme-Refactorings und Feature-Flag-Setup im überwiegend Java-basierten " +
                     "Bestand.",
             tags = listOf(
-                "Kotlin", "Java", "Jetpack Compose", "Material Design", "MVVM",
-                "Clean Architecture", "Retrofit", "OkHttp", "Firebase",
-                "Timber", "Adjust",
+                "Kotlin", "Java", "Jetpack Compose", "Material Design", "MVVM", "MVP",
+                "Clean Architecture", "Retrofit", "OkHttp", "Firebase", "Adjust",
             ),
         ),
         Project(
@@ -252,7 +256,7 @@ object ProjectsContent {
                     "Onboarding-Animationen.",
             tags = listOf(
                 "Kotlin", "Jetpack Compose", "Material Design",
-                "Coroutines", "Flow", "Dagger", "Retrofit", "Firebase",
+                "Coroutines", "Kotlin Flow", "Retrofit", "Firebase",
                 "Matomo", "Facebook SDK",
             ),
         ),
@@ -266,7 +270,7 @@ object ProjectsContent {
             tags = listOf(
                 "Kotlin", "Java", "MVI", "Dagger", "Clean Architecture",
                 "Multi-Module Architecture", "Coroutines", "RxJava",
-                "Google Maps", "Firebase", "Detekt",
+                "Google Maps", "Firebase",
             ),
         ),
         Project(
@@ -278,8 +282,8 @@ object ProjectsContent {
                     "Onboarding-Landscape, Window-Insets und BOM-Dokumentation.",
             tags = listOf(
                 "Kotlin", "Jetpack Compose", "Material Design", "MVVM",
-                "Multi-Module Architecture", "Coroutines", "Flow",
-                "Gradle Kotlin DSL", "Timber", "Auth0",
+                "Multi-Module Architecture", "Coroutines", "Kotlin Flow",
+                "Gradle Kotlin DSL", "Auth0",
             ),
         ),
         Project(
@@ -354,7 +358,7 @@ object ProjectsContent {
                     "Feature-Planung, Refactoring auf MVVM und Umstellung von XML auf " +
                     "Jetpack Compose.",
             tags = listOf(
-                "Kotlin", "Java", "Jetpack Compose", "MVVM",
+                "Kotlin", "Java", "Jetpack Compose", "MVVM", "JUnit", "Espresso", "MockK",
             ),
         ),
 //        Project(

@@ -13,7 +13,7 @@ object PersonalContent {
             "C&A, Mercedes und Deutsche Bahn.",
         address = "Arndtstraße 10, 10965 Berlin",
         phone = "+49 176 712 166 10",
-        email = "leoruland@web.de",
+        email = "hire@leoruland.dev",
         languages = listOf("Deutsch (Muttersprache)", "Englisch (C1)"),
         education = listOf(
             EducationEntry(

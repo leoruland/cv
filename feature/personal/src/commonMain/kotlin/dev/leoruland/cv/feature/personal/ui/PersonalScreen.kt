@@ -87,9 +87,17 @@ fun PersonalScreen(
 
         SectionTitle(stringResource(Res.string.section_contact))
         InfoCard {
-            LabeledLine("Adresse", data.address)
-            LabeledLine("Telefon", data.phone)
-            LabeledLine("E-Mail", data.email)
+            LabeledLine(label = "Adresse", value = data.address)
+            LabeledLink(
+                label = "Telefon",
+                value = data.phone,
+                onClick = { uriHandler.openUri("tel:${data.phone}") },
+            )
+            LabeledLink(
+                label = "E-Mail",
+                value = data.email,
+                onClick = { uriHandler.openUri("mailto:${data.email}") },
+            )
         }
 
         SectionTitle(stringResource(Res.string.section_languages))
@@ -144,6 +152,23 @@ private fun LabeledLine(label: String, value: String) {
             color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
         Text(value, style = MaterialTheme.typography.bodyMedium)
+    }
+}
+
+@Composable
+private fun LabeledLink(label: String, value: String, onClick: () -> Unit) {
+    Column(modifier = Modifier.clickable(onClick = onClick)) {
+        Text(
+            label,
+            style = MaterialTheme.typography.labelSmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+        )
+        Text(
+            value,
+            style = MaterialTheme.typography.bodyMedium,
+            color = MaterialTheme.colorScheme.primary,
+//            textDecoration = TextDecoration.Underline,
+        )
     }
 }
 
