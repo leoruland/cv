@@ -4,21 +4,21 @@ import dev.leoruland.cv.feature.projects.domain.model.Project
 
 object ProjectsContent {
     val projects: List<Project> = listOf(
-        Project(
-            name = "Pixolo Passbild App",
-            company = "apploft. GmbH",
-            period = "06.2025 – heute",
-            description = "B2B-App für biometrische Passbilder. Alleinige Android-Verantwortung: " +
-                    "Multi-Module-Architektur, CameraX/ML-Kit-Pipeline für 35-mm-Lens-Capture und " +
-                    "Face Detection, Bearbeitungs-, Warenkorb- und Print-Flow gegen die apploft API.",
-            tags = listOf(
-                "Kotlin", "Jetpack Compose", "Compose Navigation", "Material Design",
-                "MVVM", "Clean Architecture", "Multi-Module Architecture",
-                "Coroutines", "Kotlin Flow",
-                "CameraX", "ML Kit", "Retrofit", "OkHttp", "DataStore",
-                "Firebase", "Lottie", "Coil",
-            ),
-        ),
+//        Project(
+//            name = "Pixolo Passbild App",
+//            company = "apploft. GmbH",
+//            period = "06.2025 – heute",
+//            description = "B2B-App für biometrische Passbilder. Alleinige Android-Verantwortung: " +
+//                    "Multi-Module-Architektur, CameraX/ML-Kit-Pipeline für 35-mm-Lens-Capture und " +
+//                    "Face Detection, Bearbeitungs-, Warenkorb- und Print-Flow gegen die apploft API.",
+//            tags = listOf(
+//                "Kotlin", "Jetpack Compose", "Compose Navigation", "Material Design",
+//                "MVVM", "Clean Architecture", "Multi-Module Architecture",
+//                "Coroutines", "Kotlin Flow",
+//                "CameraX", "ML Kit", "Retrofit", "OkHttp", "DataStore",
+//                "Firebase", "Lottie", "Coil",
+//            ),
+//        ),
         Project(
             name = "POCO Store App",
             company = "apploft. GmbH",
@@ -73,31 +73,31 @@ object ProjectsContent {
                 "Accessibility Audit",
             ),
         ),
-        Project(
-            name = "GHB Service App",
-            company = "apploft. GmbH (intern)",
-            period = "10.2024 – 11.2025",
-            description = "Interne Personalmanagement-App für Urlaub und Abwesenheiten. " +
-                    "Urlaubsübersicht mit Jahresfilter, Absences-API, Styleguide-Refresh und " +
-                    "MVVM-Architektur-Cleanup.",
-            tags = listOf(
-                "Kotlin", "Jetpack Compose", "Compose Navigation", "Material Design", "MVVM",
-                "Clean Architecture", "Multi-Module Architecture", "Coroutines",
-                "Retrofit", "Coil", "Firebase", "Matomo", "Auth0",
-            ),
-        ),
-        Project(
-            name = "HEM Service App",
-            company = "apploft. GmbH",
-            period = "07.2025 – 11.2025",
-            description = "Tankstellen/Preisfinder. Alpha-/Beta-Build-Types eingerichtet, " +
-                    "Release-Pipeline und Branch-Scoping in der CI angepasst.",
-            tags = listOf(
-                "Kotlin", "Jetpack Compose", "Compose Navigation", "Material Design",
-                "Clean Architecture", "Multi-Module Architecture",
-                "Coroutines", "Retrofit", "Firebase", "Google Maps",
-            ),
-        ),
+//        Project(
+//            name = "GHB Service App",
+//            company = "apploft. GmbH (intern)",
+//            period = "10.2024 – 11.2025",
+//            description = "Interne Personalmanagement-App für Urlaub und Abwesenheiten. " +
+//                    "Urlaubsübersicht mit Jahresfilter, Absences-API, Styleguide-Refresh und " +
+//                    "MVVM-Architektur-Cleanup.",
+//            tags = listOf(
+//                "Kotlin", "Jetpack Compose", "Compose Navigation", "Material Design", "MVVM",
+//                "Clean Architecture", "Multi-Module Architecture", "Coroutines",
+//                "Retrofit", "Coil", "Firebase", "Matomo", "Auth0",
+//            ),
+//        ),
+//        Project(
+//            name = "HEM Service App",
+//            company = "apploft. GmbH",
+//            period = "07.2025 – 11.2025",
+//            description = "Tankstellen/Preisfinder. Alpha-/Beta-Build-Types eingerichtet, " +
+//                    "Release-Pipeline und Branch-Scoping in der CI angepasst.",
+//            tags = listOf(
+//                "Kotlin", "Jetpack Compose", "Compose Navigation", "Material Design",
+//                "Clean Architecture", "Multi-Module Architecture",
+//                "Coroutines", "Retrofit", "Firebase", "Google Maps",
+//            ),
+//        ),
         Project(
             name = "SC Freiburg",
             company = "apploft. GmbH",
@@ -122,7 +122,7 @@ object ProjectsContent {
             ),
         ),
         Project(
-            name = "HiPP Produkt App",
+            name = "HiPP Windel App",
             company = "apploft. GmbH",
             period = "11.2025",
             description = "Produktinformations-App von HiPP mit E-Commerce-Anbindung. " +
@@ -132,19 +132,19 @@ object ProjectsContent {
                 "Retrofit", "Firebase",
             ),
         ),
-        Project(
-            name = "Norderney Concierge",
-            company = "apploft. GmbH",
-            period = "10.2025",
-            description = "Reiseführer- und Concierge-App für Norderney mit News und Events. " +
-                    "Newsletter-Tile und Accessibility-Verbesserungen.",
-            tags = listOf(
-                "Kotlin", "Jetpack Compose", "Compose Navigation", "View System (XML)", "Material Design",
-                "Clean Architecture", "Multi-Module Architecture", "Coroutines",
-                "Firebase", "OneSignal",
-                "Accessibility Audit", "TalkBack",
-            ),
-        ),
+//        Project(
+//            name = "Norderney Concierge",
+//            company = "apploft. GmbH",
+//            period = "10.2025",
+//            description = "Reiseführer- und Concierge-App für Norderney mit News und Events. " +
+//                    "Newsletter-Tile und Accessibility-Verbesserungen.",
+//            tags = listOf(
+//                "Kotlin", "Jetpack Compose", "Compose Navigation", "View System (XML)", "Material Design",
+//                "Clean Architecture", "Multi-Module Architecture", "Coroutines",
+//                "Firebase", "OneSignal",
+//                "Accessibility Audit", "TalkBack",
+//            ),
+//        ),
         Project(
             name = "DFL Schenken & Helfen",
             company = "apploft. GmbH",
@@ -180,7 +180,7 @@ object ProjectsContent {
             ),
         ),
         Project(
-            name = "A-ROSA River Cruises",
+            name = "A-ROSA",
             company = "apploft. GmbH",
             period = "02.2024 – 10.2025",
             description = "Kreuzfahrt-App mit QR-Scanner, Wetter-Tiles und MyCruise-Rechnungen. " +
@@ -192,7 +192,7 @@ object ProjectsContent {
             ),
         ),
         Project(
-            name = "Health 720 FoodChecker",
+            name = "Hey Nutri",
             company = "apploft. GmbH",
             period = "10.2025",
             description = "Ernährungs- und Challenge-App mit Quiz, Level-Tracking und " +
@@ -235,44 +235,44 @@ object ProjectsContent {
                 "Firebase", "Gradle Kotlin DSL",
             ),
         ),
-        Project(
-            name = "C&A Online-Shop",
-            company = "apploft. GmbH",
-            period = "04.2024 – 10.2024",
-            description = "Internationale Android-Shop-App. Greeting- und Link-Widgets, " +
-                    "Theme-Refactorings und Feature-Flag-Setup im überwiegend Java-basierten " +
-                    "Bestand.",
-            tags = listOf(
-                "Kotlin", "Java", "Jetpack Compose", "Material Design", "MVVM", "MVP",
-                "Clean Architecture", "Retrofit", "OkHttp", "Firebase", "Adjust",
-            ),
-        ),
-        Project(
-            name = "aidFIVE",
-            company = "apploft. GmbH",
-            period = "12.2023 – 01.2024",
-            description = "Lotterie App mit Spendenfunktion. Onboarding und Landing Screens. " +
-                    "Mehrsprachiges Layout, WebP-Optimierung, gendergerechte Texte und " +
-                    "Onboarding-Animationen.",
-            tags = listOf(
-                "Kotlin", "Jetpack Compose", "Material Design",
-                "Coroutines", "Kotlin Flow", "Retrofit", "Firebase",
-                "Matomo", "Facebook SDK",
-            ),
-        ),
-        Project(
-            name = "Mercedes me Service App",
-            company = "apploft. GmbH",
-            period = "08.2022 – 12.2022",
-            description = "Service-Booking-App von Mercedes mit Damage-Report-Flow. " +
-                    "Portrait-Videowiedergabe, Dealership-Search-Navigation und Insurance-Partner-UI " +
-                    "in MVI-Architektur.",
-            tags = listOf(
-                "Kotlin", "Java", "MVI", "Dagger", "Clean Architecture",
-                "Multi-Module Architecture", "Coroutines", "RxJava",
-                "Google Maps", "Firebase",
-            ),
-        ),
+//        Project(
+//            name = "C&A Online-Shop",
+//            company = "apploft. GmbH",
+//            period = "04.2024 – 10.2024",
+//            description = "Internationale Android-Shop-App. Greeting- und Link-Widgets, " +
+//                    "Theme-Refactorings und Feature-Flag-Setup im überwiegend Java-basierten " +
+//                    "Bestand.",
+//            tags = listOf(
+//                "Kotlin", "Java", "Jetpack Compose", "Material Design", "MVVM", "MVP",
+//                "Clean Architecture", "Retrofit", "OkHttp", "Firebase", "Adjust",
+//            ),
+//        ),
+//        Project(
+//            name = "aidFIVE",
+//            company = "apploft. GmbH",
+//            period = "12.2023 – 01.2024",
+//            description = "Lotterie App mit Spendenfunktion. Onboarding und Landing Screens. " +
+//                    "Mehrsprachiges Layout, WebP-Optimierung, gendergerechte Texte und " +
+//                    "Onboarding-Animationen.",
+//            tags = listOf(
+//                "Kotlin", "Jetpack Compose", "Material Design",
+//                "Coroutines", "Kotlin Flow", "Retrofit", "Firebase",
+//                "Matomo", "Facebook SDK",
+//            ),
+//        ),
+//        Project(
+//            name = "Mercedes me Service App",
+//            company = "apploft. GmbH",
+//            period = "08.2022 – 12.2022",
+//            description = "Service-Booking-App von Mercedes mit Damage-Report-Flow. " +
+//                    "Portrait-Videowiedergabe, Dealership-Search-Navigation und Insurance-Partner-UI " +
+//                    "in MVI-Architektur.",
+//            tags = listOf(
+//                "Kotlin", "Java", "MVI", "Dagger", "Clean Architecture",
+//                "Multi-Module Architecture", "Coroutines", "RxJava",
+//                "Google Maps", "Firebase",
+//            ),
+//        ),
         Project(
             name = "apploft Android Libraries (intern)",
             company = "apploft. GmbH",
@@ -319,16 +319,16 @@ object ProjectsContent {
                 "Kotlin", "MVVM", "Compose Navigation", "Gradle Kotlin DSL",
             ),
         ),
-        Project(
-            name = "Newstobegood",
-            company = "nine41",
-            period = "01.2023 – 11.2023",
-            description = "Flutter-News-Reader mit Lesezeichen-System, Deep-Linking und Auth. " +
-                    "Bookmark-Persistenz, Swipe-Löschen, Tutorial-Dialoge und Auth-Integration.",
-            tags = listOf(
-                "Flutter", "Dart", "Riverpod", "Firebase", "Crashlytics", "Auth0", "Adjust",
-            ),
-        ),
+//        Project(
+//            name = "Newstobegood",
+//            company = "nine41",
+//            period = "01.2023 – 11.2023",
+//            description = "Flutter-News-Reader mit Lesezeichen-System, Deep-Linking und Auth. " +
+//                    "Bookmark-Persistenz, Swipe-Löschen, Tutorial-Dialoge und Auth-Integration.",
+//            tags = listOf(
+//                "Flutter", "Dart", "Riverpod", "Firebase", "Crashlytics", "Auth0", "Adjust",
+//            ),
+//        ),
         Project(
             name = "Bijou Brigitte Online-Shop",
             company = "nine41",
@@ -340,16 +340,16 @@ object ProjectsContent {
                 "Flutter", "Dart", "Riverpod", "Firebase", "Crashlytics",
             ),
         ),
-        Project(
-            name = "Rotary App",
-            company = "Mediabeam / Rotary Verlag",
-            period = "02.2023 – 04.2023",
-            description = "Flutter-App für Rotary-Event-Management. Dependency-Updates auf " +
-                    "Flutter 3.7, permissionsfreies PDF-Handling und Token-Erneuerung.",
-            tags = listOf(
-                "Flutter", "Dart",
-            ),
-        ),
+//        Project(
+//            name = "Rotary",
+//            company = "Mediabeam / Rotary Verlag",
+//            period = "02.2023 – 04.2023",
+//            description = "Flutter-App für Rotary-Event-Management. Dependency-Updates auf " +
+//                    "Flutter 3.7, permissionsfreies PDF-Handling und Token-Erneuerung.",
+//            tags = listOf(
+//                "Flutter", "Dart",
+//            ),
+//        ),
         Project(
             name = "Call a Bike",
             company = "Deutsche Bahn Connect GmbH",
