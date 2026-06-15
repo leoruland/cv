@@ -1,9 +1,9 @@
 package dev.leoruland.cv.feature.skills.ui.components
 
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.LocalMinimumInteractiveComponentSize
 import androidx.compose.material3.MaterialTheme
@@ -15,12 +15,13 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import dev.leoruland.cv.feature.skills.domain.model.Skill
 import dev.leoruland.cv.theming.AppTheme
-import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
 fun TagChip(
@@ -29,28 +30,30 @@ fun TagChip(
     onClick: () -> Unit,
 ) {
     val containerColor = if (skill.isActive) {
-        MaterialTheme.colorScheme.tertiaryContainer
+        MaterialTheme.colorScheme.tertiary
     } else {
         MaterialTheme.colorScheme.surfaceVariant
     }
     val contentColor = if (skill.isActive) {
-        MaterialTheme.colorScheme.onTertiaryContainer
+        MaterialTheme.colorScheme.onTertiary
     } else {
         MaterialTheme.colorScheme.onSurfaceVariant
     }
     CompositionLocalProvider(LocalMinimumInteractiveComponentSize provides Dp.Unspecified) {
         Surface(
-            modifier = modifier,
+            modifier = modifier then Modifier.heightIn(min = 48.dp),
             onClick = onClick,
             shape = MaterialTheme.shapes.extraLarge,
             color = containerColor,
             contentColor = contentColor,
         ) {
-            Text(
-                text = skill.name,
-                style = MaterialTheme.typography.labelMedium,
-                modifier = Modifier.padding(horizontal = 10.dp, vertical = 4.dp),
-            )
+            Box {
+                Text(
+                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp).align(Alignment.Center),
+                    text = skill.name,
+                    style = MaterialTheme.typography.labelLarge,
+                )
+            }
         }
     }
 }
@@ -59,7 +62,7 @@ fun TagChip(
 @Composable
 private fun TagChipActivePreview() {
     AppTheme {
-        Box(modifier = Modifier.padding(4.dp)) {
+        Box(modifier = Modifier.padding(0.dp)) {
             TagChip(skill = Skill(name = "Kotlin", isActive = true), onClick = {})
         }
     }

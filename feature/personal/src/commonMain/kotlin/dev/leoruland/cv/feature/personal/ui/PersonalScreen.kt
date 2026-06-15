@@ -1,5 +1,7 @@
 package dev.leoruland.cv.feature.personal.ui
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -19,18 +21,19 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import cv_app.feature.personal.generated.resources.Res
 import cv_app.feature.personal.generated.resources.section_contact
 import cv_app.feature.personal.generated.resources.section_education
 import cv_app.feature.personal.generated.resources.section_languages
-import dev.leoruland.cv.feature.personal.domain.DefaultPersonalRepository
-import dev.leoruland.cv.feature.personal.data.DefaultPersonalDataSource
 import dev.leoruland.cv.core.components.SectionTitle
+import dev.leoruland.cv.feature.personal.data.DefaultPersonalDataSource
+import dev.leoruland.cv.feature.personal.domain.DefaultPersonalRepository
 import dev.leoruland.cv.theming.AppTheme
 import org.jetbrains.compose.resources.stringResource
-import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
 fun PersonalScreen(
@@ -39,9 +42,11 @@ fun PersonalScreen(
         PersonalViewModel(DefaultPersonalRepository(DefaultPersonalDataSource()))
     },
 ) {
-    val p by viewModel.personal
+    val data by viewModel.personalData
+    val uriHandler = LocalUriHandler.current
     Column(
         modifier = modifier
+            .background(MaterialTheme.colorScheme.background)
             .fillMaxWidth()
             .verticalScroll(rememberScrollState())
             .padding(horizontal = 20.dp, vertical = 16.dp),
@@ -55,24 +60,24 @@ fun PersonalScreen(
         ) {
             Column(Modifier.padding(20.dp)) {
                 Text(
-                    text = p.name,
+                    text = data.name,
                     style = MaterialTheme.typography.headlineMedium,
                     fontWeight = FontWeight.Medium,
                 )
                 Spacer(Modifier.height(4.dp))
                 Text(
-                    text = p.role,
+                    text = data.role,
                     style = MaterialTheme.typography.titleMedium,
                     color = MaterialTheme.colorScheme.primary,
                 )
                 Spacer(Modifier.height(12.dp))
                 Surface(
-                    color = MaterialTheme.colorScheme.surface,
-                    contentColor = MaterialTheme.colorScheme.onSurface,
+                    color = MaterialTheme.colorScheme.surfaceVariant,
+                    contentColor = MaterialTheme.colorScheme.onSurfaceVariant,
                     shape = RoundedCornerShape(16.dp),
                 ) {
                     Text(
-                        text = p.tagline,
+                        text = data.tagline,
                         style = MaterialTheme.typography.bodyMedium,
                         modifier = Modifier.padding(14.dp),
                     )
@@ -82,20 +87,20 @@ fun PersonalScreen(
 
         SectionTitle(stringResource(Res.string.section_contact))
         InfoCard {
-            LabeledLine("Adresse", p.address)
-            LabeledLine("Telefon", p.phone)
-            LabeledLine("E-Mail", p.email)
+            LabeledLine("Adresse", data.address)
+            LabeledLine("Telefon", data.phone)
+            LabeledLine("E-Mail", data.email)
         }
 
         SectionTitle(stringResource(Res.string.section_languages))
         InfoCard {
-            p.languages.forEach { lang ->
+            data.languages.forEach { lang ->
                 Text(lang, style = MaterialTheme.typography.bodyMedium)
             }
         }
 
         SectionTitle(stringResource(Res.string.section_education))
-        p.education.forEach { e ->
+        data.education.forEach { e ->
             InfoCard {
                 Text(
                     e.degree,
