@@ -9,8 +9,8 @@ object ExperienceContent {
             role = "Software Engineer Mobile",
             company = "apploft. GmbH",
             period = "06.2025 – heute",
-            description = "End-to-End-Verantwortung für die Pixolo Passport App — von " +
-                "Multi-Module-Architektur über CameraX/ML-Kit-Pipeline bis Release. Parallel " +
+            description = "End-to-End-Verantwortung für die Entwicklung einer App zur Erfassung biometrischer Passbilder — von " +
+                "Multi-Module-Architektur über CameraX/ML-Kit-Pipeline bis Release. Daneben " +
                 "App-übergreifende Initiativen in Accessibility (BFSG), Tooling und " +
                 "Plattform-Modernisierung; Beiträge an apploft-internen Compose-Libraries und " +
                 "CI-Workflows.",
@@ -55,10 +55,9 @@ object ExperienceContent {
                 Bullet(
                     "Feature-Entwicklung",
                     "Eigenverantwortliche Umsetzung neuer Funktionalitäten quer durch das " +
-                        "Kunden-Portfolio, von Google-Pay-Integration und Shop-Flows (POCO) " +
-                        "über Receipt-Scan und Kundenkarten-Capture (Lotto Niedersachsen) " +
-                        "bis zu Onboarding-, Tracking- und Consent-Flows (aidFIVE, Mercedes me, " +
-                        "Bijou Brigitte).",
+                        "Kunden-Portfolio, von Google-Pay-Integration und Shop-Flows " +
+                        "über Receipt-Scan und Kundenkarten-Capture " +
+                        "bis zu Onboarding-, Tracking- und Consent-Flows.",
                 ),
                 Bullet(
                     "Bugfixing",
@@ -69,11 +68,11 @@ object ExperienceContent {
                 ),
                 Bullet(
                     "Architektur-Refactorings",
-                    "Von MVP/MVI nach MVVM mit Compose-Migration in Bestands-Apps wie C&A und Mercedes me.",
+                    "Von MVP/MVI nach MVVM mit Compose-Migration in Bestands-Apps.",
                 ),
                 Bullet(
                     "Internationale Teams",
-                    "englisch- und deutschsprachige Abstimmung über mehrere Kundenprojekte.",
+                    "Englisch- und deutschsprachige Abstimmung über mehrere Kundenprojekte.",
                 ),
 //                Bullet(
 //                    "Tech-Stack-Bandbreite",
