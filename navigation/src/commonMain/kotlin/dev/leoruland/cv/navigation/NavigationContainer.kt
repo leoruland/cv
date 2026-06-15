@@ -19,7 +19,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.NavigationRail
-import androidx.compose.material3.NavigationRailDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -35,9 +34,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import cv_app.navigation.generated.resources.Res
-import cv_app.navigation.generated.resources.preview_tab_a
-import cv_app.navigation.generated.resources.preview_tab_b
 import androidx.navigation3.runtime.NavBackStack
 import androidx.navigation3.runtime.NavEntry
 import androidx.navigation3.runtime.NavKey
@@ -47,14 +43,17 @@ import androidx.navigation3.ui.NavDisplay
 import androidx.navigationevent.compose.LocalNavigationEventDispatcherOwner
 import androidx.navigationevent.compose.rememberNavigationEventDispatcherOwner
 import androidx.savedstate.serialization.SavedStateConfiguration
+import cv_app.navigation.generated.resources.Res
+import cv_app.navigation.generated.resources.preview_tab_a
+import cv_app.navigation.generated.resources.preview_tab_b
 import dev.leoruland.cv.theming.AppTheme
-import org.jetbrains.compose.resources.StringResource
-import org.jetbrains.compose.resources.stringResource
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.modules.PolymorphicModuleBuilder
 import kotlinx.serialization.modules.SerializersModule
 import kotlinx.serialization.modules.polymorphic
 import kotlinx.serialization.modules.subclass
+import org.jetbrains.compose.resources.StringResource
+import org.jetbrains.compose.resources.stringResource
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -194,7 +193,9 @@ private fun Rail(
                     onClick = { onSelect(dest) },
                     icon = { Icon(dest.icon, contentDescription = label) },
                     label = { Text(label) },
-                    colors = WideNavigationRailItemDefaults.colors().copy(selectedTextColor = MaterialTheme.colorScheme.onSecondary),
+                    colors = WideNavigationRailItemDefaults.colors().copy(
+                        selectedTextColor = MaterialTheme.colorScheme.onSecondaryContainer,
+                    ),
                     railExpanded = true,
                 )
                 Spacer(Modifier.size(16.dp))
